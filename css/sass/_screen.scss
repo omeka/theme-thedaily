@@ -1,0 +1,524 @@
+/* @group ----- Generic HTML Elements ----- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $body-font;
+    font-size: $scalable-font-size;
+    line-height: $scalable-line-height;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 1.75 * $scalable-font-size;
+    line-height: 2 * $scalable-line-height;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5 * $scalable-font-size;
+    line-height: 2 * $scalable-line-height;
+    margin: rhythm(1, 1.5 * $base-font-size) 0;
+}
+
+h3 {
+    font-size: 1.25 * $scalable-font-size;
+    line-height: $scalable-line-height;
+    margin: rhythm(1, 1.25 * $base-font-size) 0;
+}
+
+h4 {
+    margin: rhythm() 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+p a,
+span a {
+    background-color: yellow;
+}
+
+p,
+ul {
+    margin: rhythm() 0;
+}
+
+/* @end */
+
+/* @group ----- Navigation ----- */
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.secondary-nav ul {
+    margin: 0 0 rhythm();
+}
+
+.secondary-nav li {
+    display: inline-block;
+}
+
+.secondary-nav li a {
+    background-color: yellow;
+    font-family: $heading-font;
+    color: #000;
+    padding: rhythm(.25) rhythm(.5);
+    font-size: .75 * $scalable-font-size;
+}
+
+.pagination {
+    font-size: .75 * $scalable-font-size;
+    font-family: $heading-font;
+    margin: 0 0 rhythm();
+}
+
+.pagination input[type="text"] {
+    border: 2px solid #000;
+    width: rhythm(2);
+    text-align: center;
+    height: rhythm(1.25);
+}
+
+.pagination a {
+    background-color: yellow;
+    font-family: $heading-font;
+    color: #000;
+    padding: rhythm(.25) rhythm(.5);
+}
+
+.pagination_previous a:before {
+    content: $fa-var-caret-left;
+    font-family: "FontAwesome";
+    margin: 0 rhythm(.25);
+}
+
+.pagination_next a:before {
+    content: $fa-var-caret-right;
+    font-family: "FontAwesome";
+    margin: 0 rhythm(.25);
+}
+
+.item-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: $heading-font;
+    font-size: .75 * $scalable-font-size;
+}
+
+.item-pagination a {
+    background-color: yellow;
+    padding: rhythm(.25) rhythm(.5);
+}
+
+/* @end */
+
+/* @group ----- Header ----- */
+
+#wrap {
+    position: relative;
+}
+
+#skipnav {
+    display: none;
+}
+
+#site-title {
+    font-family: $heading-font;
+    float: left;
+}
+
+header {
+    background-color: #000;
+    vertical-align: top;
+    padding: rhythm(.5) rhythm(2);
+    text-align: right;
+    position: relative;
+}
+
+header > * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+header a {
+    color: #fff;
+}
+
+#top-nav .menu-toggle,
+.search-toggle {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+}
+
+#top-nav .menu-toggle:before {
+    content: $fa-var-navicon;
+    font-family: "FontAwesome";
+}
+
+.search-toggle:before {
+    content: $fa-var-search;
+    font-family: "FontAwesome";
+}
+
+#search-form,
+#top-nav > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.9);
+    z-index: 9999;
+    margin: 0;
+    padding: rhythm(2);
+    text-align: left;
+    height: calc(100vh - #{rhythm(2)});
+    transition: visibility linear .2s, opacity .2s linear;
+    color: #fff;
+    vertical-align: top;
+}
+
+#top-nav > ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#search-form.open,
+#top-nav.open > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+#search-form.closed,
+#top-nav.closed > ul {
+    visibility:hidden;
+    opacity:0;
+}
+
+#top-nav li {
+    list-style-type: none;
+}
+
+#top-nav > ul > li {
+    font-family: $heading-font;
+    padding-bottom: rhythm();
+    width: 30%;
+}
+
+#top-nav > ul > li > a {
+    color: yellow;
+}
+
+#top-nav > ul > li li {
+    font-family: $body-font;
+}
+
+#top-nav ul ul {
+    padding-left: 0;
+}
+
+#top-nav ul ul ul li {
+    font-size: .75 * $scalable-font-size;
+    line-height: .75 * $scalable-line-height;
+
+    &:before {
+        content: "\2014";
+        margin-right: rhythm(.25);
+    }
+}
+
+#search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 20vh;
+}
+
+#search-form input[type="text"] {
+    border: 0;
+    border-bottom: 3px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    display: inline-block;
+    width: 50%;
+    margin-right: rhythm(.5);
+    font-size: 2 * $scalable-font-size;
+    height: 2 * $scalable-line-height;
+}
+
+::placeholder {
+    font-style: italic;
+}
+
+#search-form button[type="submit"] {
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2 * $scalable-font-size;
+    height: 2 * $scalable-line-height;
+    padding-left: rhythm(.25);
+    padding-right: rhythm(.25);
+}
+
+#content {
+    padding: rhythm() rhythm(2) 0;
+}
+
+/* @end */
+
+/* @group ----- Home ----- */
+
+#featured {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-weight: 200;
+}
+
+#featured .record:first-child {
+    height: 60vh;
+}
+
+#featured .record:first-child,
+#featured.layout-2 .record:nth-child(2),
+#featured .record:nth-child(6n),
+#featured .record:nth-child(6n+1), {
+    width: 100%;
+}
+
+#featured .record {
+    margin-bottom: rhythm();
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e7e7;
+    z-index: 0;
+    padding: rhythm();
+    min-height: 30vh;
+    width: calc(50% - #{rhythm(.5)});
+}
+
+#featured .record a {
+    color: yellow;
+}
+
+#featured .featured-meta {
+    padding: 0 rhythm();
+    max-width: 75%;
+}
+
+#featured .featured-meta > * {
+    padding: rhythm(.5);
+    margin: 0;
+    background-color: #000;
+    display: inline-block;
+}
+
+#featured .featured-meta h3 {
+    background-color: yellow;
+}
+
+#featured .featured-meta h3 a {
+    color: #000;
+}
+
+#featured .record img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    opacity: .4;
+    transition: opacity .2s ease-in-out;
+}
+
+#featured .record:hover img {
+    opacity: 1;
+}
+
+/* @end */
+
+/* @group ----- Footer ----- */
+
+footer {
+    padding: 0 rhythm(2) rhythm();
+}
+
+/* @end */
+
+/* @group ----- Browse ----- */
+
+.browse #content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.browse h1 {
+    width: 100%;
+}
+
+#sort-links {
+    font-family: $heading-font;
+    font-size: .75 * $scalable-font-size;
+}
+
+#sort-links ul {
+    list-style: none;
+    padding-left: 0;
+    display: inline-block;
+    margin: 0 0 rhythm();
+}
+
+#sort-links li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 rhythm(.25);
+}
+
+#sort-links a {
+    background-color: yellow;
+    font-family: $heading-font;
+    color: #000;
+    padding: rhythm(.25) rhythm(.5);
+}
+
+#sort-links .asc a:after {
+    content: $fa-var-caret-up;
+    font-family: "FontAwesome";
+    margin-left: rhythm(.25);
+}
+
+#sort-links .desc a:after {
+    content: $fa-var-caret-down;
+    font-family: "FontAwesome";
+    margin-left: rhythm(.25);
+}
+
+.records {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    margin: rhythm() 0 0;
+}
+
+.records h2 {
+    width: 100%;
+}
+
+.records .hentry {
+    font-size: .75 * $scalable-font-size;
+    line-height: .75 * $scalable-line-height;
+    width: calc(25% - #{rhythm()});
+    margin: 0 rhythm() rhythm(2) 0;
+
+    &:nth-child(4n) {
+        margin-right: 0;
+    }
+}
+
+.records .hentry img {
+    max-width: 100%;
+    height: auto;
+}
+
+.records .hentry h4 {
+    margin: 0;
+}
+
+.records .hentry .date {
+    display: block;
+}
+
+.browse #outputs {
+    width: 100%;
+    font-size: .75 * $scalable-font-size;
+}
+
+.browse .outputs-label:after {
+    content: ": ";
+}
+
+.browse #outputs p {
+    display: inline-block
+}
+
+/* @end */
+
+/* @group ----- Show ----- */
+
+.chocolat-overlay {
+    background-color: #000;
+}
+
+#itemfiles-nav {
+    height: rhythm(3);
+    margin: rhythm(.5) 0;
+}
+
+#itemfiles-nav img {
+    height: 100%;
+}
+
+.element {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.element h3 {
+    font-size: $scalable-font-size;
+    width: 25%;
+    margin: 0;
+    text-align: right;
+}
+
+.element-text {
+    width: 75%;
+    margin-bottom: rhythm();
+    padding-left: rhythm();
+}
+
+.element-text a {
+    background-color: yellow;
+}
+
+.show #output-format-list {
+    margin: 0;
+}
+
+/* @end */
