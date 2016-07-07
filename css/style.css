@@ -1099,4 +1099,21 @@ textarea {
   }
 
   /* @end */
+  /* @group ----- Exhibits ----- */
+  /* line 528, sass/_screen.scss */
+  #exhibit-blocks {
+    margin: 24px 0 0;
+  }
+
+  /* line 532, sass/_screen.scss */
+  .exhibit-block {
+    overflow: hidden;
+  }
+
+  /* line 536, sass/_screen.scss */
+  .exhibit-block p:only-of-type {
+    margin: 0;
+  }
+
+  /* @end */
 }

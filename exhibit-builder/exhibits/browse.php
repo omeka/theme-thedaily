@@ -28,7 +28,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
             <?php if ($exhibitImage = record_image($exhibit, 'thumbnail')): ?>
                 <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
             <?php endif; ?>
-            <h2><?php echo link_to_exhibit(); ?></h2>
+            <h4><?php echo link_to_exhibit(); ?></h4>
             <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
             <div class="description"><?php echo $exhibitDescription; ?></div>
             <?php endif; ?>
@@ -39,6 +39,18 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
     <?php endforeach; ?>
 </div>
 
+<nav class="navigation secondary-nav">
+    <?php echo nav(array(
+        array(
+            'label' => __('Browse All'),
+            'uri' => url('exhibits')
+        ),
+        array(
+            'label' => __('Browse by Tag'),
+            'uri' => url('exhibits/tags')
+        )
+    )); ?>
+</nav>
 <?php echo pagination_links(); ?>
 
 <?php else: ?>

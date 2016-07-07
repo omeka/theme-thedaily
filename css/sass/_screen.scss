@@ -522,3 +522,20 @@ footer {
 }
 
 /* @end */
+
+/* @group ----- Exhibits ----- */
+
+#exhibit-blocks {
+    margin: rhythm() 0 0;
+}
+
+.exhibit-block {
+    overflow: hidden;
+}
+
+.exhibit-block p:only-of-type {
+    margin: 0;
+}
+
+
+/* @end */
