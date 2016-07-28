@@ -10,7 +10,9 @@ queue_js_string('
         container: "#itemfiles"
         }).data("chocolat");
 
-        inContainer.api().open()
+        if (typeof inContainer != "undefined") {
+            inContainer.api().open()
+        }
     });
 ');
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
