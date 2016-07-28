@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 1.75 * $scalable-font-size;
     line-height: 2 * $scalable-line-height;
-    margin: 0;
+    margin: 0 0 rhythm(1, 1.75 * $scalable-font-size);
 }
 
 h2 {
@@ -54,6 +54,122 @@ p,
 ul {
     margin: rhythm() 0;
 }
+
+    /* @group ----- Form Elements ----- */
+
+    fieldset {
+        border: 0;
+        padding: 0;
+    }
+
+    input,
+    textarea,
+    button,
+    select {
+        font-family: $body-font;
+        font-size: $scalable-font-size;
+        line-height: $scalable-line-height;
+        margin: 0;
+    }
+
+
+    select {
+        width: 100%;
+        appearance: none;
+        padding: rhythm(.25) rhythm(1.25) rhythm(.25) rhythm(.5);
+        font-family: $body-font;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fff url('../img/select-arrow.svg') right rhythm(.5) center no-repeat;
+        background-size: .5 * $scalable-font-size;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    textarea {
+        width: 100%;
+        appearance: none;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: rhythm(.25);
+    }
+
+    .button,
+    button,
+    input[type="submit"] {
+        appearance: none;
+        padding: rhythm(.25) rhythm(.5);
+        background-color: yellow;
+        border: 3px solid #000;
+        font-family: $heading-font;
+        cursor: pointer;
+    }
+
+    [type="submit"] {
+        margin: rhythm() 0;
+    }
+
+
+    form .field {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: rhythm();
+    }
+
+    form .field label,
+    form .field .label {
+        font-family: $heading-font;
+    }
+
+    form .field .explanation {
+        margin-bottom: rhythm(.25);
+    }
+
+    form .field .two.columns,
+    form .field > label,
+    form .field > .label {
+        width: span(4 of 12 alpha);
+        padding-right: rhythm(.5);
+    }
+
+    form .field .five.columns,
+    form .field > .inputs {
+        width: span(8 of 12 omega);
+        padding-left: rhythm(.5);
+    }
+
+    /* @end */
+
+    /* @group ----- Tables ----- */
+
+    table {
+        margin: rhythm(2) 0;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: rhythm(.125);
+    }
+
+    th:not(:empty) {
+        background-color: #000;
+        color: #ccc;
+        text-align: left;
+    }
+
+    td,
+    th {
+        padding: rhythm(.25) rhythm(.5);
+    }
+
+    td {
+        background-color: #f7f7f7;
+    }
+
+    /* @end */
 
 /* @end */
 
@@ -96,6 +212,8 @@ nav li {
     width: rhythm(2);
     text-align: center;
     height: rhythm(1.25);
+    font-family: $heading-font;
+    font-size: .75 * $base-font-size;
 }
 
 .pagination a {
@@ -145,6 +263,7 @@ nav li {
 #site-title {
     font-family: $heading-font;
     float: left;
+    padding: rhythm(.25) 0;
 }
 
 header {
@@ -194,7 +313,6 @@ header a {
     padding: rhythm(2);
     text-align: left;
     height: calc(100vh - #{rhythm(2)});
-    transition: visibility linear .2s, opacity .2s linear;
     color: #fff;
     vertical-align: top;
 }
@@ -205,16 +323,9 @@ header a {
     flex-wrap: wrap;
 }
 
-#search-form.open,
-#top-nav.open > ul {
-    visibility: visible;
-    opacity: 1;
-}
-
 #search-form.closed,
 #top-nav.closed > ul {
-    visibility:hidden;
-    opacity:0;
+    display: none;
 }
 
 #top-nav li {
@@ -283,6 +394,7 @@ header a {
     height: 2 * $scalable-line-height;
     padding-left: rhythm(.25);
     padding-right: rhythm(.25);
+    margin: 0;
 }
 
 #content {
@@ -293,7 +405,7 @@ header a {
 
 /* @group ----- Home ----- */
 
-#featured {
+div#featured {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -476,6 +588,12 @@ footer {
     display: inline-block
 }
 
+.collection.hentry h2 {
+    font-size: $scalable-font-size;
+    line-height: $scalable-line-height;
+    margin: (.5 * $scalable-font-size) 0 0;
+}
+
 /* @end */
 
 /* @group ----- Show ----- */
@@ -494,23 +612,31 @@ footer {
 }
 
 .element {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
+    margin-bottom: rhythm();
+    vertical-align: top;
+    overflow: hidden;
 }
 
 .element h3 {
     font-size: $scalable-font-size;
     width: 25%;
     margin: 0;
+    display: block;
     text-align: right;
+    float: left;
 }
 
 .element-text {
-    width: 75%;
-    margin-bottom: rhythm();
-    padding-left: rhythm();
+    display: block;
+    width: calc(75% - #{rhythm()});
+    height: auto;
+    text-align: left;
+    float: right;
+}
+
+.element-text:not(:first-of-type) {
+    margin-top: rhythm(.5);
+    @include leading-border(1px, .5, $base-font-size, solid);
 }
 
 .element-text a {
@@ -519,6 +645,94 @@ footer {
 
 .show #output-format-list {
     margin: 0;
+}
+
+/* @end */
+
+/* @group ----- Advanced Item Search ----- */
+
+.search-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rhythm(.5);
+}
+
+.search-entry:not(:first-child) {
+    margin-top: rhythm(.5);
+}
+
+.search-entry:only-child > select,
+.search-entry:only-child > input[type="text"] {
+    width: 33%;
+}
+
+.search-entry > select,
+.search-entry > input[type="text"] {
+    width: calc((100% - #{rhythm(2.75)}) / 3);
+}
+
+button.remove_search {
+    text-indent: -9999px;
+    width: rhythm(2);
+    position: relative;
+    background-color: #000;
+    color: #fff;
+}
+
+button.remove_search:after {
+    content: $fa-var-trash-o;
+    font-family: "FontAwesome";
+    text-indent: 0;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: rhythm(.25);
+}
+
+button.add_search {
+    margin-left: calc(#{span(4 of 12)} + #{rhythm(.5)});
+    font-size: .75 * $scalable-font-size;
+}
+
+/* @end */
+
+/* @group ----- Site-wide Search ----- */
+
+#search-filters ul {
+    padding-left: 0;
+}
+
+#search-filters li,
+#search-filters li ul {
+    display: inline-block;
+    margin: 0;
+}
+
+#search-filters > ul > li {
+    margin-right: rhythm();
+    border-bottom: 2px solid;
+}
+
+#search-filters li li {
+    text-transform: lowercase;
+
+    &:not(:last-child):after {
+        content: ", ";
+    }
+}
+
+#search-results img {
+    height: rhythm(3);
+    vertical-align: top;
+    margin-right: rhythm(.5);
+}
+
+#search-results td > * {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* @end */
@@ -537,5 +751,51 @@ footer {
     margin: 0;
 }
 
+#exhibit-pages {
+    background-color: yellow;
+    padding: rhythm();
+    @include bleed(rhythm() rhythm(2) 0);
+    margin-top: rhythm();
+    margin-bottom: rhythm();
+}
+
+#exhibit-pages ul {
+    margin-left: 0;
+}
+
+#exhibit-pages > ul > li {
+    margin: 0 rhythm(.25) rhythm(.25) 0;
+}
+
+#exhibit-pages > ul > li:not(:last-of-type):after {
+    content: "\00b7";
+    display: inline-block;
+    margin-left: rhythm(.25);
+}
+
+#exhibit-pages .current a {
+    border-bottom: 2px solid;
+}
+
+#exhibit-page-navigation {
+    background-color: #000;
+    color: #ccc;
+    padding: rhythm();
+    margin-top: rhythm(2);
+    margin-bottom: rhythm(2);
+}
+
+#exhibit-page-navigation a {
+    padding: rhythm(.25);
+    background-color: yellow;
+}
+
+/* @end */
+
+/* @group ----- Containers ----- */
+
+#primary {
+    width: 100%;
+}
 
 /* @end */
