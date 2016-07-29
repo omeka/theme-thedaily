@@ -603,8 +603,16 @@ footer {
 }
 
 #itemfiles-nav {
+    margin: rhythm(.5) 0 rhythm(2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#itemfiles-nav a {
     height: rhythm(3);
-    margin: rhythm(.5) 0;
+    display: inline-block;
+    margin: 0  rhythm(.25) rhythm(.25) 0;
 }
 
 #itemfiles-nav img {
@@ -749,6 +757,14 @@ button.add_search {
 
 .exhibit-block p:only-of-type {
     margin: 0;
+}
+
+.exhibit-block p:first-of-type {
+    margin-top: 0;
+}
+
+.exhibit-block p:last-of-type {
+    margin-bottom: 0;
 }
 
 #exhibit-pages {
