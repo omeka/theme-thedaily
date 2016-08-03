@@ -70,8 +70,8 @@ ul {
         font-size: $scalable-font-size;
         line-height: $scalable-line-height;
         margin: 0;
+        border-radius: 0;
     }
-
 
     select {
         width: 100%;
@@ -97,6 +97,7 @@ ul {
         border: 1px solid #ccc;
         background-color: #fff;
         padding: rhythm(.25);
+        border-radius: 0;
     }
 
     .button,
@@ -119,6 +120,7 @@ ul {
         display: flex;
         flex-wrap: wrap;
         margin-bottom: rhythm();
+        align-items: center;
     }
 
     form .field label,
@@ -141,6 +143,11 @@ ul {
     form .field > .inputs {
         width: span(8 of 12 omega);
         padding-left: rhythm(.5);
+    }
+
+    form .field > input[type="checkbox"] + label {
+        width: auto;
+        margin: 0 0 0 rhythm(.25);
     }
 
     /* @end */
@@ -344,10 +351,15 @@ header a {
 
 #top-nav > ul > li li {
     font-family: $body-font;
+
+    &:not(:last-of-type) {
+        margin-bottom: rhythm(.5);
+    }
 }
 
 #top-nav ul ul {
     padding-left: 0;
+    margin: rhythm(.5) 0 0;
 }
 
 #top-nav ul ul ul li {
@@ -378,6 +390,7 @@ header a {
     margin-right: rhythm(.5);
     font-size: 2 * $scalable-font-size;
     height: 2 * $scalable-line-height;
+    padding: 0;
 }
 
 ::placeholder {
@@ -395,10 +408,7 @@ header a {
     padding-left: rhythm(.25);
     padding-right: rhythm(.25);
     margin: 0;
-}
-
-#content {
-    padding: rhythm() rhythm(2) 0;
+    line-height: 0;
 }
 
 /* @end */
@@ -409,7 +419,9 @@ div#featured {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-weight: 200;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #featured .record:first-child {
@@ -464,8 +476,8 @@ div#featured {
 }
 
 #featured .record img {
-    width: 100%;
-    height: auto;
+    min-width: 100%;
+    min-height: 100%;
     position: absolute;
     top: 50%;
     left: 0;
@@ -516,7 +528,7 @@ footer {
 #sort-links li {
     list-style-type: none;
     display: inline-block;
-    margin: 0 rhythm(.25);
+    margin: 0 rhythm(.125);
 }
 
 #sort-links a {
@@ -632,6 +644,7 @@ footer {
     display: block;
     text-align: right;
     float: left;
+    word-break: break-word;
 }
 
 .element-text {
@@ -645,6 +658,14 @@ footer {
 .element-text:not(:first-of-type) {
     margin-top: rhythm(.5);
     @include leading-border(1px, .5, $base-font-size, solid);
+}
+
+.element-text > p:first-child {
+    margin-top: 0;
+}
+
+.element-text > p:last-child {
+    margin-bottom: 0;
 }
 
 .element-text a {
@@ -774,8 +795,12 @@ button.add_search {
     margin-bottom: rhythm();
 }
 
+#exhibit-pages h4 {
+    margin-top: 0;
+}
+
 #exhibit-pages ul {
-    margin-left: 0;
+    margin: 0;
 }
 
 #exhibit-pages > ul > li {
@@ -825,6 +850,15 @@ button.add_search {
 /* @end */
 
 /* @group ----- Containers ----- */
+
+body.search-open,
+body.menu-open {
+    position: fixed;
+}
+
+#content {
+    padding: rhythm() rhythm(2) 0;
+}
 
 #primary {
     width: 100%;
