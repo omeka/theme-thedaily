@@ -4,7 +4,7 @@
     ($exhibitNavBg = get_theme_option('eb_nav_background')) || ($linkColor = "#FFFF00");
     ($exhibitNavText = get_theme_option('eb_nav_text')) || ($linkText = "#000000");
     ($featuredBg = get_theme_option('featured_background')) || ($featuredBg = "#000000");
-    ($featuredText = get_theme_option('featured_text')) || ($featuredBg = "#FFFFFF");
+    ($featuredText = get_theme_option('featured_text')) || ($featuredText = "#FFFFFF");
     ($topNavHighlightText = get_theme_option('top_nav_highlight_text')) || ($buttonBg = "#FFFF00");
 ?>
 
