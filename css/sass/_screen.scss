@@ -726,30 +726,51 @@ button.add_search {
     font-size: .75 * $scalable-font-size;
 }
 
+#search-filters,
+#item-filters {
+    border-color: #000;
+    @include trailing-border(1px, 0, $base-font-size, solid);
+    @include leading-border(3px, .5, $base-font-size, solid);
+    width: 100%;
+    margin-bottom: rhythm();
+}
+
+#search-filters ul,
+#item-filters ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: .75 * $scalable-font-size;
+}
+
+#search-filters li,
+#item-filters li {
+    display: inline-block;
+    font-family: "Archivo Black", sans-serif;
+    margin-bottom: rhythm(.5);
+
+    &:not(:last-of-type):after {
+        content: "\2022";
+        display: inline-block;
+        margin: 0 rhythm(.5);
+    }
+}
+
 /* @end */
 
 /* @group ----- Site-wide Search ----- */
 
-#search-filters ul {
-    padding-left: 0;
-}
-
-#search-filters li,
 #search-filters li ul {
     display: inline-block;
-    margin: 0;
-}
-
-#search-filters > ul > li {
-    margin-right: rhythm();
-    border-bottom: 2px solid;
 }
 
 #search-filters li li {
     text-transform: lowercase;
+    margin-bottom: 0;
 
     &:not(:last-child):after {
         content: ", ";
+        margin: 0 rhythm(.125) 0 0;
     }
 }
 
