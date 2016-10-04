@@ -115,6 +115,11 @@ ul {
         margin: rhythm() 0;
     }
 
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: rhythm(.25);
+    }
+
 
     form .field {
         display: flex;
@@ -322,6 +327,7 @@ header a {
     height: calc(100vh - #{rhythm(2)});
     color: #fff;
     vertical-align: top;
+    order: 1;
 }
 
 #top-nav > ul {
@@ -409,6 +415,17 @@ header a {
     padding-right: rhythm(.25);
     margin: 0;
     line-height: 0;
+    order: 2;
+}
+
+#advanced-form {
+    order: 3;
+    display: flex;
+}
+
+#advanced-form fieldset,
+#advanced-form p:last-child {
+    margin: 0 rhythm();
 }
 
 /* @end */
@@ -875,6 +892,8 @@ button.add_search {
 body.search-open,
 body.menu-open {
     position: fixed;
+    left: 0;
+    right: 0;
 }
 
 #content {
