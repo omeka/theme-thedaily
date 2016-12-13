@@ -125,12 +125,13 @@ ul {
         display: flex;
         flex-wrap: wrap;
         margin-bottom: rhythm();
-        align-items: center;
     }
 
     form .field label,
     form .field .label {
         font-family: $heading-font;
+        vertical-align: top;
+        padding-top: rhythm(.25);
     }
 
     form .field .explanation {
@@ -701,6 +702,10 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-bottom: rhythm(.5);
+}
+
+.search-entry:first-child .advanced-search-joiner {
+    display: none;
 }
 
 .search-entry:not(:first-child) {
