@@ -61,10 +61,9 @@
                 <?php echo public_nav_main(); ?>
             </nav>
 
-            <?php echo theme_header_image(); ?>
-
-
         </header>
+
+        <?php echo theme_header_image(); ?>
 
         <article id="content" role="main">
 

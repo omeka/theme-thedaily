@@ -68,7 +68,7 @@ ul {
     select {
         font-family: $body-font;
         font-size: $scalable-font-size;
-        line-height: $scalable-line-height;
+        line-height: 1;
         margin: 0;
         border-radius: 0;
     }
@@ -430,8 +430,8 @@ header a {
 }
 
 #header-image {
-    width: calc(100% + #{rhythm(4)});
-    margin: rhythm(.5) rhythm(-2) rhythm(-.5);
+    width: 100%;
+    margin: 0;
     display: block;
 }
 
