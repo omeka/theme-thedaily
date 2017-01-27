@@ -429,6 +429,18 @@ header a {
     margin: 0 rhythm();
 }
 
+#header-image {
+    width: calc(100% + #{rhythm(4)});
+    margin: rhythm(.5) rhythm(-2) rhythm(-.5);
+    display: block;
+}
+
+#header-image img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
 /* @end */
 
 /* @group ----- Home ----- */
