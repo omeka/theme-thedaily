@@ -88,9 +88,23 @@ header {
     padding: rhythm(.5) rhythm();
 }
 
+header h1 {
+    margin-bottom: 0;
+}
+
+#top-nav > ul {
+    display: block;
+    overflow: scroll;
+    padding-bottom: rhythm(4);
+}
+
 #top-nav ul ul ul li {
     font-size: $scalable-font-size;
     line-height: $scalable-line-height;
+}
+
+#top-nav>ul>li {
+    width: 100%;
 }
 
 /* @end */
