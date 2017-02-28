@@ -1,4 +1,10 @@
 <?php
+queue_js_string('
+    jQuery("document").ready(function() {
+        var levels = jQuery(".parent").length;
+        jQuery(".current ul, .parent ul").parents("#exhibit-pages").addClass("max-tree-" + levels);
+    });
+');
 echo head(array(
     'title' => metadata('exhibit_page', 'title') . ' &middot; ' . metadata('exhibit', 'title'),
     'bodyclass' => 'exhibits show'));

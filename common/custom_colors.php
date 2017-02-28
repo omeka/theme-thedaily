@@ -5,6 +5,8 @@
     ($exhibitNavText = get_theme_option('eb_nav_text')) || ($linkText = "#000000");
     ($featuredBg = get_theme_option('featured_background')) || ($featuredBg = "#000000");
     ($featuredText = get_theme_option('featured_text')) || ($featuredText = "#FFFFFF");
+    ($homeIntroBg = get_theme_option('home_intro_background')) || ($homeIntroBg = "#FFFF00");
+    ($homeIntroText = get_theme_option('home_intro_text')) || ($homeIntroText = "#000000");
     ($topNavHighlightText = get_theme_option('top_nav_highlight_text')) || ($buttonBg = "#FFFF00");
 ?>
 
@@ -44,6 +46,11 @@ input[type="submit"] {
 
 #top-nav > ul > li > a {
     color: <?php echo $topNavHighlightText; ?>;
+}
+
+#intro {
+    background-color: <?php echo $homeIntroBg; ?>;
+    color: <?php echo $homeIntroText; ?>;
 }
 
 </style>

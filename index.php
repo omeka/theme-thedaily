@@ -1,5 +1,11 @@
 <?php echo head(array('bodyid'=>'home')); ?>
 
+<?php if (get_theme_option('Homepage Text') && (get_theme_option('Homepage Text Position') !== 'bottom')): ?>
+<div id="intro">
+    <p><?php echo get_theme_option('Homepage Text'); ?></p>
+</div>
+<?php endif; ?>
+
 <!-- Featured Item -->
 <div id="featured" class="layout-<?php echo thedaily_featured_count(); ?>">
     <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
@@ -16,8 +22,10 @@
     <?php endif; ?>
 </div><!--end featured-item-->
 
-<?php if (get_theme_option('Homepage Text')): ?>
-<p><?php echo get_theme_option('Homepage Text'); ?></p>
+<?php if (get_theme_option('Homepage Text') && (get_theme_option('Homepage Text Position') == 'bottom')): ?>
+<div id="intro">
+    <p><?php echo get_theme_option('Homepage Text'); ?></p>
+</div>
 <?php endif; ?>
 
 <?php fire_plugin_hook('public_home', array('view' => $this)); ?>

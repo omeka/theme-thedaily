@@ -7,8 +7,6 @@ function thedaily_display_random_featured_exhibits($num)
         foreach ($featuredExhibits as $featuredExhibit) {
             $html .= get_view()->partial('exhibit-builder/exhibits/single.php', array('exhibit' => $featuredExhibit));
         }
-    } else {
-        $html .= '<p>' . __('You have no featured exhibits.') . '</p>';
     }
     $html = apply_filters('exhibit_builder_display_random_featured_exhibit', $html);
     return $html;
