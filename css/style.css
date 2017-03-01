@@ -1672,6 +1672,13 @@ textarea {
   }
 
   /* @end */
+  /* @group ----- Plugins ----- */
+  /* line 998, sass/_screen.scss */
+  #geolocation-browse {
+    width: 100%;
+  }
+
+  /* @end */
 }
 @media screen and (max-width: 640px) {
   /* @group ----- Generic HTML Elements ----- */
