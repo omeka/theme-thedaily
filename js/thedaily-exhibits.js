@@ -29,6 +29,8 @@
         $window.resize(function() {
             if ($(this).width() > 640) {
                 sidebarScroller();
+            } else {
+                $window.unbind('scroll');
             }
         });
 
