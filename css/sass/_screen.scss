@@ -919,8 +919,12 @@ button.add_search {
     font-family: "FontAwesome";
     content: $fa-var-caret-right;
     position: absolute;
-    left: rhythm(-.125);
-    top: rhythm(.25);
+    left: 0;
+    top: rhythm(.1667);
+}
+
+#exhibit-pages > ul > li > ul {
+    margin-bottom: rhythm(.125);
 }
 
 #exhibit-pages ul ul > li > a {
@@ -964,11 +968,6 @@ button.add_search {
 
 #exhibit-pages .collapsed + ul {
     display: none;
-}
-
-#exhibit-pages ul li.current ul,
-#exhibit-pages ul li.parent ul {
-    margin-bottom: rhythm(.25);
 }
 
 #exhibit-pages ul li.current ul li,
