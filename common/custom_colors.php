@@ -36,6 +36,9 @@ input[type="submit"] {
 
 #exhibit-pages {
     background-color: <?php echo $exhibitNavBg; ?>;
+}
+
+#exhibit-pages a {
     color: <?php echo $exhibitNavText; ?>;
 }
 
