@@ -545,6 +545,7 @@ div#featured {
 
 footer {
     padding: 0 rhythm(2) rhythm();
+    clear: both;
 }
 
 /* @end */
@@ -842,7 +843,7 @@ button.add_search {
 /* @group ----- Exhibits ----- */
 
 #exhibit-blocks {
-    margin: rhythm() 0 0;
+    margin: 0;
 }
 
 .exhibit-block {
@@ -862,84 +863,117 @@ button.add_search {
 }
 
 #exhibit-pages {
-    background-color: $primary-color;
-    padding: rhythm();
-    @include bleed(rhythm() rhythm(2) 0);
+    font-size: .6125 * $scalable-font-size;
+    line-height: .6125 * $scalable-line-height;
+    width: 20%;
+    float: left;
+    margin: 0 0 rhythm();
+}
+
+#exhibit-pages ~ * {
+    width: 80%;
+    float: right;
+    padding-left: rhythm();
+}
+
+#exhibit-pages ~ *:last-child {
     margin-bottom: rhythm();
-    position: relative;
-}
-
-#exhibit-pages.max-tree-1,
-#exhibit-pages.max-tree-2 {
-    font-size: .875 * $base-font-size;
-    padding: rhythm(.5) rhythm(2);
-}
-
-#exhibit-pages.max-tree-1 h4,
-#exhibit-pages.max-tree-2 h4 {
-    margin-bottom: rhythm(.5);
-}
-
-#exhibit-pages.max-tree-1 {
-    margin-bottom: rhythm(3);
-}
-
-#exhibit-pages.max-tree-2 {
-    margin-bottom: rhythm(5);
 }
 
 #exhibit-pages h4 {
-    margin-top: 0;
+    background-color: #000;
+    margin: 0;
+    padding: rhythm(.5);
+
+    a {
+        color: #fff;
+    }
 }
 
 #exhibit-pages ul {
     margin: 0;
+    font-family: $heading-font;
 }
 
-#exhibit-pages ul ul {
+#exhibit-pages > ul > li:not(:last-child) {
+    border-bottom: 2px solid #000;
+
+    & > a {
+        padding: calc(#{rhythm(.25)} - 1px) rhythm(.5);
+    }
+}
+
+#exhibit-pages li,
+#exhibit-pages a {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+#exhibit-pages li > a {
+    padding: rhythm(.25) rhythm(.5);
+}
+
+#exhibit-pages li.current > a:before,
+#exhibit-pages li.parent.collapsed > a:before {
+    font-family: "FontAwesome";
+    content: $fa-var-caret-right;
+    position: absolute;
+    left: rhythm(-.125);
+    top: rhythm(.25);
+}
+
+#exhibit-pages ul ul > li > a {
+    padding: rhythm(.125) rhythm(.5) rhythm(.125) rhythm();
+}
+
+#exhibit-pages ul ul ul > li > a {
+    padding: rhythm(.125) rhythm(.5) rhythm(.125) rhythm(1.75);
+}
+
+#exhibit-pages .has-children {
+    padding-right: rhythm();
+}
+
+#exhibit-pages .subpages-toggle {
+    border: 0;
+    display: block;
+    float: right;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    margin-top: rhythm(-1.1667);
+    padding: rhythm(.25);
+
+    &.expanded:before {
+        transform: rotate(45deg);
+    }
+}
+
+#exhibit-pages li li .subpages-toggle {
+    margin-top: rhythm(-1.0833);
+}
+
+#exhibit-pages .subpages-toggle:before {
+    font-family: "FontAwesome";
+    content: $fa-var-plus;
+    font-size: .6125 * $scalable-font-size;
+    line-height: .6125 * $scalable-line-height;
+    display: block;
+}
+
+#exhibit-pages .collapsed + ul {
     display: none;
 }
 
 #exhibit-pages ul li.current ul,
 #exhibit-pages ul li.parent ul {
+    margin-bottom: rhythm(.25);
+}
+
+#exhibit-pages ul li.current ul li,
+#exhibit-pages ul li.parent ul li {
     display: block;
-    position: absolute;
-    background-color: #000;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding: rhythm(.5) rhythm(2);
-
-    li a {
-        color: #fff;
-        border-bottom: 0;
-    }
-
-    li:not(:last-of-type):after {
-        content: "\00b7";
-        display: inline-block;
-        margin: 0 rhythm(.25);
-        color: #fff;
-    }
-}
-
-#exhibit-pages ul li.parent > a,
-#exhibit-pages ul li.parent .current a {
-    border-bottom: 2px solid;
-}
-
-#exhibit-pages > ul > li {
-    margin: 0 rhythm(.25) rhythm(.25) 0;
-}
-
-#exhibit-pages > ul > li:not(:last-of-type):after {
-    content: "\00b7";
-    display: inline-block;
-    margin-left: rhythm(.25);
-}
-
-#exhibit-pages .current a {
-    border-bottom: 2px solid;
 }
 
 #exhibit-page-navigation {

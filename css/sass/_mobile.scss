@@ -183,7 +183,24 @@ button.add_search {
 /* @group ----- Exhibits ----- */
 
 #exhibit-pages {
-    @include bleed(rhythm() rhythm() 0);
+    font-size: 1.5 * $scalable-font-size;
+    line-height: 1.5 * $scalable-line-height;
+    width: 100%;
+    float: none;
+    margin: 0 0 rhythm();
+}
+
+#exhibit-pages .subpages-toggle:before {
+    font-size: 1.5 * $scalable-font-size;
+    line-height: 1.5 * $scalable-line-height;
+    margin-top: rhythm(-.3625);
+    padding-right: rhythm(.125);
+}
+
+#exhibit-pages ~ * {
+    width: 100%;
+    float: none;
+    padding-left: 0;
 }
 
 /* @end */
