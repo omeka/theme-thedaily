@@ -663,6 +663,10 @@ footer {
     background-color: #000;
 }
 
+#itemfiles:not(.chocolat-in-fullscreen) .chocolat-close {
+    display: none;
+}
+
 #itemfiles-nav {
     margin: rhythm(.5) 0 rhythm(2);
     display: flex;

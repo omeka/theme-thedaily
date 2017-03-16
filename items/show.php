@@ -1,33 +1,34 @@
 <?php
-queue_css_file('chocolat');
-queue_js_file('jquery.chocolat.min', 'js');
-queue_js_string('
-    jQuery(document).ready(function(){
-        var inContainer = jQuery("#itemfiles-nav").Chocolat({
-        imageSize: "default",
-        loop: true,
-        fullscreen: true,
-        container: "#itemfiles"
-        }).data("chocolat");
-
-        if (typeof inContainer != "undefined") {
-            inContainer.api().open()
-        }
-    });
-');
-echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 $itemFiles = $item->Files;
+$images = array();
+$nonImages = array();
+foreach ($itemFiles as $itemFile) {
+    $mimeType = $itemFile->mime_type;
+    if (strpos($mimeType, 'image') !== false) {
+        $images[] = $itemFile;
+    } else {
+        $nonImages[] = $itemFile;
+    }
+}
+$hasImages = (count($images) > 0);
+if ($hasImages) {
+    queue_css_file('chocolat');
+    queue_js_file('modernizr', 'javascripts/vendor');
+    queue_js_file('jquery.chocolat.min', 'js');
+    queue_js_file('items-show', 'js');
+}
+echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
 
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
 <!-- The following returns all of the files associated with an item. -->
-<?php if (metadata('item', 'has files')): ?>
+<?php if ($hasImages): ?>
 <div id="itemfiles" style="width: 100%; height: 50vh; background: #E0E0E0; margin:auto;"></div>
 <div id="itemfiles-nav">
-    <?php foreach ($itemFiles as $itemFile): ?>
-        <a href="<?php echo $itemFile->getWebPath('original'); ?>" class="chocolat-image">
-            <?php echo file_image('square_thumbnail', array(), $itemFile); ?>
+    <?php foreach ($images as $image): ?>
+        <a href="<?php echo $image->getWebPath('original'); ?>" class="chocolat-image">
+            <?php echo file_image('square_thumbnail', array(), $image); ?>
         </a>
     <?php endforeach; ?>
 </div>
@@ -50,6 +51,15 @@ $itemFiles = $item->Files;
     <div class="element-text"><?php echo tag_string('item'); ?></div>
 </div>
 <?php endif;?>
+
+<?php if (count($nonImages) > 0): ?>
+<div id="other-media" class="element">
+    <h3>Other Media</h3>
+    <?php foreach ($nonImages as $nonImage): ?>
+    <div class="element-text"><a href="<?php echo file_display_url($nonImage, 'original'); ?>"><?php echo metadata($nonImage, 'display_title'); ?> - <?php echo $nonImage->mime_type; ?></a></div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
 
 <!-- The following prints a citation for this item. -->
 <div id="item-citation" class="element">
