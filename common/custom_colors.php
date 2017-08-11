@@ -14,6 +14,7 @@
 
 p a,
 span a,
+table a,
 .secondary-nav li a,
 .pagination a,
 .item-pagination a,
