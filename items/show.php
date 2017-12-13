@@ -34,6 +34,12 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 <?php endif; ?>
 
+<?php if ((count($nonImages) > 0) && get_theme_option('other_media') == 0): ?>
+    <?php foreach ($nonImages as $nonImage): ?>
+        <?php echo file_markup($nonImage); ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
 <?php echo all_element_texts('item'); ?>
 
 <!-- If the item belongs to a collection, the following creates a link to that collection. -->
@@ -52,7 +58,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 <?php endif;?>
 
-<?php if (count($nonImages) > 0): ?>
+<?php if ((count($nonImages) > 0) && get_theme_option('other_media') == 1): ?>
 <div id="other-media" class="element">
     <h3>Other Media</h3>
     <?php foreach ($nonImages as $nonImage): ?>
