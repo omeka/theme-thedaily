@@ -1,5 +1,6 @@
 <?php
 $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 'Title')));
+$totalItems = metadata('collection', 'total_items');
 ?>
 
 <?php echo head(array('title'=> $collectionTitle, 'bodyclass' => 'collections show')); ?>
@@ -10,7 +11,7 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
 
 <h2><?php echo link_to_items_browse(__('Items in the %s Collection', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>
 <div id="collection-items" class="records">
-    <?php if (metadata('collection', 'total_items') > 0): ?>
+    <?php if ($totalItems > 0): ?>
         <?php foreach (loop('items') as $item): ?>
         <?php $itemTitle = strip_formatting(metadata('item', array('Dublin Core', 'Title'))); ?>
         <div class="item hentry">
@@ -35,6 +36,8 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
             </div><!-- end class="item-meta" -->
         </div><!-- end class="item hentry" -->
         <?php endforeach; ?>
+        <hr>
+        <?php echo link_to_items_browse(__(plural('View item', 'View all %s items', $totalItems), $totalItems), array('collection' => metadata('collection', 'id')), array('class' => 'view-items-link')); ?>
     <?php else: ?>
         <p><?php echo __("There are currently no items within this collection."); ?></p>
     <?php endif; ?>

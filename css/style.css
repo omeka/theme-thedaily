@@ -896,6 +896,13 @@ textarea {
     background-color: yellow; }
   .show #output-format-list {
     margin: 0; }
+  #collection-items hr {
+    width: 100%; }
+  .show .view-items-link {
+    display: inline-block;
+    margin: 24px auto;
+    font-family: "Archivo Black", sans-serif;
+    padding: 6px; }
   /* @end */
   /* @group ----- Advanced Item Search ----- */
   .search-entry {

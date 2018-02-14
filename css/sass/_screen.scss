@@ -730,6 +730,17 @@ footer {
     margin: 0;
 }
 
+#collection-items hr {
+    width: 100%;
+}
+
+.show .view-items-link {
+    display: inline-block;
+    margin: $spacing-unit auto;
+    font-family: $heading-font;
+    padding: (.25 * $spacing-unit);
+}
+
 /* @end */
 
 /* @group ----- Advanced Item Search ----- */

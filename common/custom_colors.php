@@ -24,7 +24,8 @@ table a,
 #featured .featured-meta h3,
 .button,
 button,
-input[type="submit"] {
+input[type="submit"],
+.view-items-link {
     background-color: <?php echo $buttonBg; ?>;
     color: <?php echo $buttonText; ?>;
 }
