@@ -21,23 +21,23 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 1.75 * $scalable-font-size;
     line-height: 2 * $scalable-line-height;
-    margin: 0 0 rhythm(1, 1.75 * $scalable-font-size);
+    margin: 0 0 $spacing-unit;
 }
 
 h2 {
     font-size: 1.5 * $scalable-font-size;
     line-height: 2 * $scalable-line-height;
-    margin: rhythm(1, 1.5 * $base-font-size) 0;
+    margin: $spacing-unit 0;
 }
 
 h3 {
     font-size: 1.25 * $scalable-font-size;
     line-height: $scalable-line-height;
-    margin: rhythm(1, 1.25 * $base-font-size) 0;
+    margin: $spacing-unit 0;
 }
 
 h4 {
-    margin: rhythm() 0;
+    margin: $spacing-unit 0;
 }
 
 a {
@@ -52,7 +52,7 @@ span a {
 
 p,
 ul {
-    margin: rhythm() 0;
+    margin: $spacing-unit 0;
 }
 
     /* @group ----- Form Elements ----- */
@@ -76,11 +76,11 @@ ul {
     select {
         width: 100%;
         appearance: none;
-        padding: rhythm(.25) rhythm(1.25) rhythm(.25) rhythm(.5);
+        padding: (.25 * $spacing-unit) (1.25 * $spacing-unit) (.25 * $spacing-unit) (.5 * $spacing-unit);
         font-family: $body-font;
         border: 1px solid #ccc;
         border-radius: 3px;
-        background: #fff url('../img/select-arrow.svg') right rhythm(.5) center no-repeat;
+        background: #fff url('../img/select-arrow.svg') right (.5 * $spacing-unit) center no-repeat;
         background-size: .5 * $scalable-font-size;
     }
 
@@ -96,7 +96,7 @@ ul {
         appearance: none;
         border: 1px solid #ccc;
         background-color: #fff;
-        padding: rhythm(.25);
+        padding: (.25 * $spacing-unit);
         border-radius: 0;
     }
 
@@ -104,7 +104,7 @@ ul {
     button,
     input[type="submit"] {
         appearance: none;
-        padding: rhythm(.25) rhythm(.5);
+        padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
         background-color: $primary-color;
         border: 3px solid #000;
         font-family: $heading-font;
@@ -112,48 +112,48 @@ ul {
     }
 
     [type="submit"] {
-        margin: rhythm() 0;
+        margin: $spacing-unit 0;
     }
 
     input[type="radio"],
     input[type="checkbox"] {
-        margin-right: rhythm(.25);
+        margin-right: (.25 * $spacing-unit);
     }
 
 
     form .field {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: rhythm();
+        margin-bottom: $spacing-unit;
     }
 
     form .field label,
     form .field .label {
         font-family: $heading-font;
         vertical-align: top;
-        padding-top: rhythm(.25);
+        padding-top: (.25 * $spacing-unit);
     }
 
     form .field .explanation {
-        margin-bottom: rhythm(.25);
+        margin-bottom: (.25 * $spacing-unit);
     }
 
     form .field .two.columns,
     form .field > label,
     form .field > .label {
         width: span(4 of 12 alpha);
-        padding-right: rhythm(.5);
+        padding-right: (.5 * $spacing-unit);
     }
 
     form .field .five.columns,
     form .field > .inputs {
         width: span(8 of 12 omega);
-        padding-left: rhythm(.5);
+        padding-left: (.5 * $spacing-unit);
     }
 
     form .field > input[type="checkbox"] + label {
         width: auto;
-        margin: 0 0 0 rhythm(.25);
+        margin: 0 0 0 (.25 * $spacing-unit);
     }
 
     /* @end */
@@ -161,10 +161,10 @@ ul {
     /* @group ----- Tables ----- */
 
     table {
-        margin: rhythm(2) 0;
+        margin: (2 * $spacing-unit) 0;
         width: 100%;
         border-collapse: separate;
-        border-spacing: rhythm(.125);
+        border-spacing: (.125 * $spacing-unit);
     }
 
     th:not(:empty) {
@@ -175,7 +175,7 @@ ul {
 
     td,
     th {
-        padding: rhythm(.25) rhythm(.5);
+        padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
     }
 
     td {
@@ -199,7 +199,7 @@ nav li {
 }
 
 .secondary-nav ul {
-    margin: 0 0 rhythm();
+    margin: 0 0 $spacing-unit;
 }
 
 .secondary-nav li {
@@ -210,21 +210,21 @@ nav li {
     background-color: $primary-color;
     font-family: $heading-font;
     color: #000;
-    padding: rhythm(.25) rhythm(.5);
+    padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
     font-size: .75 * $scalable-font-size;
 }
 
 .pagination {
     font-size: .75 * $scalable-font-size;
     font-family: $heading-font;
-    margin: 0 0 rhythm();
+    margin: 0 0 $spacing-unit;
 }
 
 .pagination input[type="text"] {
     border: 2px solid #000;
-    width: rhythm(2);
+    width: (2 * $spacing-unit);
     text-align: center;
-    height: rhythm(1.25);
+    height: (1.25 * $spacing-unit);
     font-family: $heading-font;
     font-size: .75 * $base-font-size;
 }
@@ -233,19 +233,19 @@ nav li {
     background-color: $primary-color;
     font-family: $heading-font;
     color: #000;
-    padding: rhythm(.25) rhythm(.5);
+    padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
 }
 
 .pagination_previous a:before {
     content: $fa-var-caret-left;
     font-family: "FontAwesome";
-    margin: 0 rhythm(.25);
+    margin: 0 (.25 * $spacing-unit);
 }
 
 .pagination_next a:before {
     content: $fa-var-caret-right;
     font-family: "FontAwesome";
-    margin: 0 rhythm(.25);
+    margin: 0 (.25 * $spacing-unit);
 }
 
 .item-pagination {
@@ -258,7 +258,7 @@ nav li {
 
 .item-pagination a {
     background-color: $primary-color;
-    padding: rhythm(.25) rhythm(.5);
+    padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
 }
 
 /* @end */
@@ -279,7 +279,7 @@ nav li {
     padding: 0;
 
     img {
-        max-height: rhythm(2);
+        max-height: (2 * $spacing-unit);
         width: auto;
         vertical-align: bottom;
     }
@@ -288,7 +288,7 @@ nav li {
 header {
     background-color: #000;
     vertical-align: top;
-    padding: rhythm(.5) rhythm(2);
+    padding: (.5 * $spacing-unit) (2 * $spacing-unit);
     text-align: right;
     position: relative;
     display: flex;
@@ -331,9 +331,9 @@ header a {
     background-color: rgba(0,0,0,.9);
     z-index: 9999;
     margin: 0;
-    padding: rhythm(2);
+    padding: (2 * $spacing-unit);
     text-align: left;
-    height: calc(100vh - #{rhythm(2)});
+    height: calc(100vh - #{(2 * $spacing-unit)});
     color: #fff;
     vertical-align: top;
     order: 1;
@@ -356,7 +356,7 @@ header a {
 
 #top-nav > ul > li {
     font-family: $heading-font;
-    padding-bottom: rhythm();
+    padding-bottom: $spacing-unit;
     width: 30%;
 }
 
@@ -368,13 +368,13 @@ header a {
     font-family: $body-font;
 
     &:not(:last-of-type) {
-        margin-bottom: rhythm(.5);
+        margin-bottom: (.5 * $spacing-unit);
     }
 }
 
 #top-nav ul ul {
     padding-left: 0;
-    margin: rhythm(.5) 0 0;
+    margin: (.5 * $spacing-unit) 0 0;
 }
 
 #top-nav ul ul ul li {
@@ -383,7 +383,7 @@ header a {
 
     &:before {
         content: "\2014";
-        margin-right: rhythm(.25);
+        margin-right: (.25 * $spacing-unit);
     }
 }
 
@@ -402,7 +402,7 @@ header a {
     color: #fff;
     display: inline-block;
     width: 50%;
-    margin-right: rhythm(.5);
+    margin-right: (.5 * $spacing-unit);
     font-size: 2 * $scalable-font-size;
     height: 2 * $scalable-line-height;
     padding: 0;
@@ -420,8 +420,8 @@ header a {
     cursor: pointer;
     font-size: 2 * $scalable-font-size;
     height: 2 * $scalable-line-height;
-    padding-left: rhythm(.25);
-    padding-right: rhythm(.25);
+    padding-left: (.25 * $spacing-unit);
+    padding-right: (.25 * $spacing-unit);
     margin: 0;
     line-height: 0;
     order: 2;
@@ -434,7 +434,7 @@ header a {
 
 #advanced-form fieldset,
 #advanced-form p:last-child {
-    margin: 0 rhythm();
+    margin: 0 $spacing-unit;
 }
 
 #header-image {
@@ -474,7 +474,7 @@ div#featured {
 }
 
 #featured .record {
-    margin-bottom: rhythm();
+    margin-bottom: $spacing-unit;
     color: #fff;
     overflow: hidden;
     position: relative;
@@ -484,9 +484,9 @@ div#featured {
     justify-content: center;
     background-color: #e7e7e7;
     z-index: 0;
-    padding: rhythm();
+    padding: $spacing-unit;
     min-height: 30vh;
-    width: calc(50% - #{rhythm(.5)});
+    width: calc(50% - #{(.5 * $spacing-unit)});
 }
 
 #featured .record a {
@@ -494,12 +494,12 @@ div#featured {
 }
 
 #featured .featured-meta {
-    padding: 0 rhythm();
+    padding: 0 $spacing-unit;
     max-width: 75%;
 }
 
 #featured .featured-meta > * {
-    padding: rhythm(.5);
+    padding: (.5 * $spacing-unit);
     margin: 0;
     background-color: #000;
     display: inline-block;
@@ -531,12 +531,12 @@ div#featured {
 
 #intro {
     background-color: $primary-color;
-    margin: rhythm(-1) rhythm(-2) rhythm(2) rhythm(-2);
-    padding: rhythm(2);
+    margin: (-1 * $spacing-unit) (-2 * $spacing-unit) (2 * $spacing-unit) (-2 * $spacing-unit);
+    padding: (2 * $spacing-unit);
 }
 
 #featured + #intro {
-    margin-top: rhythm(2);
+    margin-top: (2 * $spacing-unit);
 }
 
 /* @end */
@@ -544,7 +544,7 @@ div#featured {
 /* @group ----- Footer ----- */
 
 footer {
-    padding: 0 rhythm(2) rhythm();
+    padding: 0 (2 * $spacing-unit) $spacing-unit;
     clear: both;
 }
 
@@ -571,32 +571,32 @@ footer {
     list-style: none;
     padding-left: 0;
     display: inline-block;
-    margin: 0 0 rhythm();
+    margin: 0 0 $spacing-unit;
 }
 
 #sort-links li {
     list-style-type: none;
     display: inline-block;
-    margin: 0 rhythm(.125);
+    margin: 0 (.125 * $spacing-unit);
 }
 
 #sort-links a {
     background-color: $primary-color;
     font-family: $heading-font;
     color: #000;
-    padding: rhythm(.25) rhythm(.5);
+    padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
 }
 
 #sort-links .asc a:after {
     content: $fa-var-caret-up;
     font-family: "FontAwesome";
-    margin-left: rhythm(.25);
+    margin-left: (.25 * $spacing-unit);
 }
 
 #sort-links .desc a:after {
     content: $fa-var-caret-down;
     font-family: "FontAwesome";
-    margin-left: rhythm(.25);
+    margin-left: (.25 * $spacing-unit);
 }
 
 .records {
@@ -605,7 +605,7 @@ footer {
     justify-content: flex-start;
     align-content: flex-start;
     width: 100%;
-    margin: rhythm() 0 0;
+    margin: $spacing-unit 0 0;
 }
 
 .records h2 {
@@ -615,8 +615,8 @@ footer {
 .records .hentry {
     font-size: .75 * $scalable-font-size;
     line-height: .75 * $scalable-line-height;
-    width: calc(25% - #{rhythm()});
-    margin: 0 rhythm() rhythm(2) 0;
+    width: calc(25% - #{$spacing-unit});
+    margin: 0 $spacing-unit (2 * $spacing-unit) 0;
 
     &:nth-child(4n) {
         margin-right: 0;
@@ -668,16 +668,16 @@ footer {
 }
 
 #itemfiles-nav {
-    margin: rhythm(.5) 0 rhythm(2);
+    margin: (.5 * $spacing-unit) 0 (2 * $spacing-unit);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 #itemfiles-nav a {
-    height: rhythm(3);
+    height: (3 * $spacing-unit);
     display: inline-block;
-    margin: 0  rhythm(.25) rhythm(.25) 0;
+    margin: 0  (.25 * $spacing-unit) (.25 * $spacing-unit) 0;
 }
 
 #itemfiles-nav img {
@@ -685,7 +685,7 @@ footer {
 }
 
 .element {
-    margin-bottom: rhythm();
+    margin-bottom: $spacing-unit;
     vertical-align: top;
     overflow: hidden;
 }
@@ -702,15 +702,16 @@ footer {
 
 .element-text {
     display: block;
-    width: calc(75% - #{rhythm()});
+    width: calc(75% - #{$spacing-unit});
     height: auto;
     text-align: left;
     float: right;
 }
 
 .element-text:not(:first-of-type) {
-    margin-top: rhythm(.5);
-    @include leading-border(1px, .5, $base-font-size, solid);
+    margin-top: (.5 * $spacing-unit);
+    border-top: 1px solid;
+    padding-top: ((.5 * $spacing-unit) - 1px);
 }
 
 .element-text > p:first-child {
@@ -736,7 +737,7 @@ footer {
 .search-entry {
     display: flex;
     justify-content: space-between;
-    margin-bottom: rhythm(.5);
+    margin-bottom: (.5 * $spacing-unit);
 }
 
 .search-entry:first-child .advanced-search-joiner {
@@ -744,7 +745,7 @@ footer {
 }
 
 .search-entry:not(:first-child) {
-    margin-top: rhythm(.5);
+    margin-top: (.5 * $spacing-unit);
 }
 
 .search-entry:only-child > select,
@@ -754,12 +755,12 @@ footer {
 
 .search-entry > select,
 .search-entry > input[type="text"] {
-    width: calc((100% - #{rhythm(2.75)}) / 3);
+    width: calc((100% - #{(2.75 * $spacing-unit)}) / 3);
 }
 
 button.remove_search {
     text-indent: -9999px;
-    width: rhythm(2);
+    width: (2 * $spacing-unit);
     position: relative;
     background-color: #000;
     color: #fff;
@@ -775,21 +776,21 @@ button.remove_search:after {
     right: 0;
     bottom: 0;
     text-align: center;
-    padding: rhythm(.25);
+    padding: (.25 * $spacing-unit);
 }
 
 button.add_search {
-    margin-left: calc(#{span(4 of 12)} + #{rhythm(.5)});
+    margin-left: calc(#{span(4 of 12)} + #{(.5 * $spacing-unit)});
     font-size: .75 * $scalable-font-size;
 }
 
 #search-filters,
 #item-filters {
-    border-color: #000;
-    @include trailing-border(1px, 0, $base-font-size, solid);
-    @include leading-border(3px, .5, $base-font-size, solid);
+    border-bottom: 1px solid #000;
+    border-top: 3px solid #000;
+    padding: ((.5 * $spacing-unit) - 1px) 0 0;
     width: 100%;
-    margin-bottom: rhythm();
+    margin-bottom: $spacing-unit;
 }
 
 #search-filters ul,
@@ -804,12 +805,12 @@ button.add_search {
 #item-filters li {
     display: inline-block;
     font-family: "Archivo Black", sans-serif;
-    margin-bottom: rhythm(.5);
+    margin-bottom: (.5 * $spacing-unit);
 
     &:not(:last-of-type):after {
         content: "\2022";
         display: inline-block;
-        margin: 0 rhythm(.5);
+        margin: 0 (.5 * $spacing-unit);
     }
 }
 
@@ -827,14 +828,14 @@ button.add_search {
 
     &:not(:last-child):after {
         content: ", ";
-        margin: 0 rhythm(.125) 0 0;
+        margin: 0 (.125 * $spacing-unit) 0 0;
     }
 }
 
 #search-results img {
-    height: rhythm(3);
+    height: (3 * $spacing-unit);
     vertical-align: top;
-    margin-right: rhythm(.5);
+    margin-right: (.5 * $spacing-unit);
 }
 
 #search-results td > * {
@@ -871,23 +872,23 @@ button.add_search {
     line-height: .6125 * $scalable-line-height;
     width: 20%;
     float: left;
-    margin: 0 0 rhythm();
+    margin: 0 0 $spacing-unit;
 }
 
 #exhibit-pages ~ * {
     width: 80%;
     float: right;
-    padding-left: rhythm();
+    padding-left: $spacing-unit;
 }
 
 #exhibit-pages ~ *:last-child {
-    margin-bottom: rhythm();
+    margin-bottom: $spacing-unit;
 }
 
 #exhibit-pages h4 {
     background-color: #000;
     margin: 0;
-    padding: rhythm(.5);
+    padding: (.5 * $spacing-unit);
 
     a {
         color: #fff;
@@ -903,7 +904,7 @@ button.add_search {
     border-bottom: 2px solid #000;
 
     & > a {
-        padding: calc(#{rhythm(.25)} - 1px) rhythm(.5);
+        padding: calc(#{(.25 * $spacing-unit)} - 1px) (.5 * $spacing-unit);
     }
 }
 
@@ -915,7 +916,7 @@ button.add_search {
 }
 
 #exhibit-pages li > a {
-    padding: rhythm(.25) rhythm(.5);
+    padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
 }
 
 #exhibit-pages li.current > a:before,
@@ -924,23 +925,23 @@ button.add_search {
     content: $fa-var-caret-right;
     position: absolute;
     left: 0;
-    top: rhythm(.1667);
+    top: (.1667 * $spacing-unit);
 }
 
 #exhibit-pages > ul > li > ul {
-    margin-bottom: rhythm(.125);
+    margin-bottom: (.125 * $spacing-unit);
 }
 
 #exhibit-pages ul ul > li > a {
-    padding: rhythm(.125) rhythm(.5) rhythm(.125) rhythm();
+    padding: (.125 * $spacing-unit) (.5 * $spacing-unit) (.125 * $spacing-unit) $spacing-unit;
 }
 
 #exhibit-pages ul ul ul > li > a {
-    padding: rhythm(.125) rhythm(.5) rhythm(.125) rhythm(1.75);
+    padding: (.125 * $spacing-unit) (.5 * $spacing-unit) (.125 * $spacing-unit) (1.75 * $spacing-unit);
 }
 
 #exhibit-pages .has-children {
-    padding-right: rhythm();
+    padding-right: $spacing-unit;
 }
 
 #exhibit-pages .subpages-toggle {
@@ -950,8 +951,8 @@ button.add_search {
     position: relative;
     z-index: 1;
     background: transparent;
-    margin-top: rhythm(-1.1667);
-    padding: rhythm(.25);
+    margin-top: (-1.1667 * $spacing-unit);
+    padding: (.25 * $spacing-unit);
 
     &.expanded:before {
         transform: rotate(45deg);
@@ -959,7 +960,7 @@ button.add_search {
 }
 
 #exhibit-pages li li .subpages-toggle {
-    margin-top: rhythm(-1.0833);
+    margin-top: (-1.0833 * $spacing-unit);
 }
 
 #exhibit-pages .subpages-toggle:before {
@@ -982,9 +983,9 @@ button.add_search {
 #exhibit-page-navigation {
     background-color: #000;
     color: #ccc;
-    padding: rhythm();
-    margin-top: rhythm(2);
-    margin-bottom: rhythm(2);
+    padding: $spacing-unit;
+    margin-top: (2 * $spacing-unit);
+    margin-bottom: (2 * $spacing-unit);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -1004,7 +1005,7 @@ button.add_search {
 }
 
 #exhibit-page-navigation a {
-    padding: rhythm(.25);
+    padding: (.25 * $spacing-unit);
     background-color: $primary-color;
     display: inline-block;
 }
@@ -1021,7 +1022,7 @@ body.menu-open {
 }
 
 #content {
-    padding: rhythm() rhythm(2) 0;
+    padding: $spacing-unit (2 * $spacing-unit) 0;
 }
 
 #primary {

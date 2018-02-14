@@ -8,23 +8,23 @@ html {
 h1 {
     font-size: 2.25 * $scalable-font-size;
     line-height: 2 * $scalable-line-height;
-    margin: 0 0 rhythm(1, 1.75 * $scalable-font-size);
+    margin: 0 0 $spacing-unit;
 }
 
 h2 {
     font-size: 2 * $scalable-font-size;
     line-height: 2 * $scalable-line-height;
-    margin: rhythm(1, 2 * $base-font-size) 0;
+    margin: $spacing-unit 0;
 }
 
 h3 {
     font-size: 1.75 * $scalable-font-size;
     line-height: 1.5 * $scalable-line-height;
-    margin: rhythm(1, 1.75 * $base-font-size) 0;
+    margin: $spacing-unit 0;
 }
 
 h4 {
-    margin: rhythm(1, 1.5 * $base-font-size) 0;
+    margin: $spacing-unit 0;
     font-size: 1.5 * $scalable-font-size;
     line-height: 1.5 * $scalable-line-height;
 }
@@ -49,7 +49,7 @@ h4 {
     form .field > .label {
         width: 100%;
         padding-right: 0;
-        margin-bottom: rhythm(.25);
+        margin-bottom: (.25 * $spacing-unit);
     }
 
     form .field .five.columns,
@@ -65,7 +65,7 @@ h4 {
 /* @group ----- Containers ----- */
 
 #content {
-    padding: rhythm() rhythm() 0;
+    padding: $spacing-unit $spacing-unit 0;
 }
 
 /* @end */
@@ -85,7 +85,7 @@ h4 {
 /* @group ----- Header ----- */
 
 header {
-    padding: rhythm(.5) rhythm();
+    padding: (.5 * $spacing-unit) $spacing-unit;
 }
 
 header h1 {
@@ -95,7 +95,7 @@ header h1 {
 #top-nav > ul {
     display: block;
     overflow: scroll;
-    padding-bottom: rhythm(4);
+    padding-bottom: (4 * $spacing-unit);
 }
 
 #top-nav ul ul ul li {
@@ -112,7 +112,7 @@ header h1 {
 /* @group ----- Footer ----- */
 
 footer {
-    padding: 0 rhythm() rhythm();
+    padding: 0 $spacing-unit $spacing-unit;
 }
 
 /* @end */
@@ -145,7 +145,7 @@ div#featured {
 .records .hentry {
     font-size: 1.5 * $scalable-font-size;
     line-height: 1.5 * $scalable-line-height;
-    width: calc(50% - #{rhythm()});
+    width: calc(50% - #{$spacing-unit});
 }
 
 .collection.hentry h2 {
@@ -165,8 +165,9 @@ div#featured {
 }
 
 .element-text:not(:first-of-type) {
-    margin-top: rhythm(.25);
-    @include leading-border(1px, .25, $base-font-size, solid);
+    margin-top: (.25 * $spacing-unit);
+    border-top: 1px solid;
+    padding-top: ((.25 * $spacing-unit) - 1px);
 }
 
 /* @end */
@@ -187,14 +188,14 @@ button.add_search {
     line-height: 1.5 * $scalable-line-height;
     width: 100%;
     float: none;
-    margin: 0 0 rhythm();
+    margin: 0 0 $spacing-unit;
 }
 
 #exhibit-pages .subpages-toggle:before {
     font-size: 1.5 * $scalable-font-size;
     line-height: 1.5 * $scalable-line-height;
-    margin-top: rhythm(-.3625);
-    padding-right: rhythm(.125);
+    margin-top: (-.3625 * $spacing-unit);
+    padding-right: (.125 * $spacing-unit);
 }
 
 #exhibit-pages ~ * {
