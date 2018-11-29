@@ -10,7 +10,7 @@
 
         var sidebarScroller = function() {
             $window.scroll(function() {
-                if ($window.scrollTop() > offset.top) {
+                if ($window.scrollTop() > offset.top && $window.height() > ($sidebar.height() + offset.top) ) {
                     $sidebar.stop().animate({
                         marginTop: $window.scrollTop() - offset.top + topPadding
                     });
