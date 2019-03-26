@@ -19,21 +19,44 @@ function thedaily_get_random_featured_exhibits($num = 5, $hasImage = null)
                                      'hasImage' => $hasImage), $num);
 }
 
-function thedaily_featured_count() {
-    $count = 0;
-    if (get_theme_option('Display Featured Item') !== '0' && count(get_random_featured_items()) > 0) {
-        $count += count(get_random_featured_items(0));
-    }
-    if (get_theme_option('Display Featured Collection') !== '0' && count(get_random_featured_collection()) > 0) {
-        $count += count(get_random_featured_collection(0));
-    }
+function thedaily_show_featured_records() {
+    $randomItems = get_random_featured_items();
+    $randomCollections = get_random_featured_collection();
+    $randomExhibits = thedaily_get_random_featured_exhibits(0);
+    
+    $randomItemCount = 0;
+    $randomCollectionCount = 0;
+    $randomExhibitCount = 0;
+    
+    $randomRecordHtml = '';
+
     if ((get_theme_option('Display Featured Exhibit') !== '0')
-        && plugin_is_active('ExhibitBuilder')
-        && function_exists('thedaily_display_random_featured_exhibits'))
-    {
-        $count += count(thedaily_get_random_featured_exhibits(0));
+            && plugin_is_active('ExhibitBuilder')
+            && function_exists('thedaily_display_random_featured_exhibits')) {
+        $showRandomExhibits = true;
+        $randomExhibitCount = count($randomExhibits);
+        $randomRecordHtml .= thedaily_display_random_featured_exhibits(0);
     }
-    return $count;
+
+    if ((get_theme_option('Display Featured Collection') !== '0') && ($randomCollections !== null)) {
+        $showRandomCollections = true;
+        $randomCollectionCount = count($randomCollections);
+        $randomRecordHtml .= random_featured_collection();
+    }
+    
+    if ((get_theme_option('Display Featured Item') !== '0') && ($randomItems !== null)) {
+        $showRandomItems = true;
+        $randomItemCount = count($randomItems);
+        $randomRecordHtml .= random_featured_items(0);
+    }
+    
+    $randomRecordCount = $randomItemCount + $randomCollectionCount + $randomExhibitCount;
+    
+    $html = '<div id="featured" class="layout-' . $randomRecordCount . '">';
+    $html .= $randomRecordHtml;
+    $html .= '</div>';
+
+    return $html;
 }
 
 ?>
