@@ -2,23 +2,16 @@
 function thedaily_random_featured_records_html($recordType, $featuredRecords)
 {
     $html = '';
-    $recordSinglePartial = '';
-    
-    switch ($recordType) {
-        case 'exhibit':
-            $recordSinglePartial = 'exhibit-builder/exhibits/single.php';
-            break;
-        case 'item';
-            $recordSinglePartial = 'items/single.php';
-            break;
-        case 'collection';
-            $recordSinglePartial = 'collections/single.php';
-            break;
-    }
+
+    $recordSinglePartial = [
+        'exhibit' => 'exhibit-builder/exhibits/single.php',
+        'collection' => 'collections/single.php',
+        'item' => 'items/single.php',
+    ];
     
     if ($featuredRecords) {
         foreach ($featuredRecords as $featuredRecord) {
-            $html .= get_view()->partial($recordSinglePartial, array($recordType => $featuredRecord));
+            $html .= get_view()->partial($recordSinglePartial[$recordType], array($recordType => $featuredRecord));
         }
     }
     
@@ -36,7 +29,8 @@ function thedaily_get_random_featured_records($record, $num = 0, $hasImage = tru
                                      'hasImage' => $hasImage), $num);
 }
 
-function thedaily_display_featured_records() {
+function thedaily_display_featured_records() 
+{
     $recordTypes = ['Exhibit', 'Collection', 'Item'];
 
     $randomRecordCount = 0;
