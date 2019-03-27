@@ -6,7 +6,7 @@
 </div>
 <?php endif; ?>
 
-<?php echo thedaily_show_featured_records(); ?>
+<?php echo thedaily_display_featured_records(); ?>
 
 <?php if (get_theme_option('Homepage Text') && (get_theme_option('Homepage Text Position') == 'bottom')): ?>
 <div id="intro">
