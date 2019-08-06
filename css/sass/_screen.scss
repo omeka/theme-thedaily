@@ -46,7 +46,9 @@ a {
 }
 
 p a,
-span a {
+span a,
+#content ul a,
+#content ol a {
     background-color: $primary-color;
 }
 
@@ -937,13 +939,16 @@ button.add_search {
 }
 
 #exhibit-pages {
-    position: sticky;
-    top: $spacing-unit;
     align-self: flex-start;
     font-size: .6125 * $scalable-font-size;
     line-height: .6125 * $scalable-line-height;
     width: 20%;
     margin: 0 0 $spacing-unit;
+    
+    &.scroll {
+        position: sticky;
+        top: $spacing-unit;
+    }
 }
 
 #exhibit-pages ~ * {

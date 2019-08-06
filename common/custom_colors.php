@@ -14,6 +14,8 @@
 
 p a,
 span a,
+#content ul a,
+#content ol a,
 table a,
 .secondary-nav li a,
 .pagination a,

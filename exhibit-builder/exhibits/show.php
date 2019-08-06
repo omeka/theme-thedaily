@@ -12,7 +12,8 @@ echo head(array(
 ?>
 
 <div id="exhibit-wrap">
-    <nav id="exhibit-pages">
+    <?php $exhibitNavScroll = (get_theme_option('navigation_scroll') && (get_theme_option('navigation_scroll') == 1)); ?>
+    <nav id="exhibit-pages" <?php echo ($exhibitNavScroll) ? 'class="scroll"' : ''; ?>>
         <h4><?php echo exhibit_builder_link_to_exhibit($exhibit); ?></h4>
         <?php echo exhibit_builder_page_tree($exhibit, $exhibit_page); ?>
     </nav>
