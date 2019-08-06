@@ -1055,6 +1055,13 @@ textarea {
     vertical-align: middle; }
   /* @end */
   /* @group ----- Exhibits ----- */
+  #exhibit-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
   #exhibit-blocks {
     margin: 0; }
   .exhibit-block {
@@ -1066,14 +1073,17 @@ textarea {
   .exhibit-block p:last-of-type {
     margin-bottom: 0; }
   #exhibit-pages {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 24px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     font-size: 1.8375vmin;
     line-height: 2.75625vmin;
     width: 20%;
-    float: left;
     margin: 0 0 24px; }
   #exhibit-pages ~ * {
     width: 80%;
-    float: right;
     padding-left: 24px; }
   #exhibit-pages ~ *:last-child {
     margin-bottom: 24px; }

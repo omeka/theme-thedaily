@@ -911,6 +911,11 @@ button.add_search {
 
 /* @group ----- Exhibits ----- */
 
+#exhibit-wrap {
+    display: flex;
+    align-items: flex-start;
+}
+
 #exhibit-blocks {
     margin: 0;
 }
@@ -932,16 +937,17 @@ button.add_search {
 }
 
 #exhibit-pages {
+    position: sticky;
+    top: $spacing-unit;
+    align-self: flex-start;
     font-size: .6125 * $scalable-font-size;
     line-height: .6125 * $scalable-line-height;
     width: 20%;
-    float: left;
     margin: 0 0 $spacing-unit;
 }
 
 #exhibit-pages ~ * {
     width: 80%;
-    float: right;
     padding-left: $spacing-unit;
 }
 

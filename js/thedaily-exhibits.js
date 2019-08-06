@@ -1,39 +1,5 @@
 (function($) {
     $(document).ready(function() {
-
-        // Exhibit sidebar scrolling
-
-        var $sidebar   = $("#exhibit-pages"), 
-            $window    = $(window),
-            offset     = $sidebar.offset(),
-            topPadding = 15;
-
-        var sidebarScroller = function() {
-            $window.scroll(function() {
-                if ($window.scrollTop() > offset.top) {
-                    $sidebar.stop().animate({
-                        marginTop: $window.scrollTop() - offset.top + topPadding
-                    });
-                } else {
-                    $sidebar.stop().animate({
-                        marginTop: 0
-                    });
-                }
-            });
-        };
-
-        if ($window.width() > 640) {
-            sidebarScroller();
-        }
-
-        $window.resize(function() {
-            if ($(this).width() > 640) {
-                sidebarScroller();
-            } else {
-                $window.unbind('scroll');
-            }
-        });
-
         // Exhibit sidebar submenu toggle management
 
         $('#exhibit-pages li ul').each(function() {
