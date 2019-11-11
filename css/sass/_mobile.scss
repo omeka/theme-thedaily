@@ -183,12 +183,21 @@ button.add_search {
 
 /* @group ----- Exhibits ----- */
 
+#exhibit-wrap {
+    display: block;
+}
+
 #exhibit-pages {
     font-size: 1.5 * $scalable-font-size;
     line-height: 1.5 * $scalable-line-height;
     width: 100%;
     float: none;
     margin: 0 0 $spacing-unit;
+    
+    &.scroll {
+        position: relative;
+        top: 0;
+    }
 }
 
 #exhibit-pages .subpages-toggle:before {

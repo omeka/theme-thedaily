@@ -1311,12 +1311,17 @@ textarea {
     font-size: 4.5vmin; }
   /* @end */
   /* @group ----- Exhibits ----- */
+  #exhibit-wrap {
+    display: block; }
   #exhibit-pages {
     font-size: 4.5vmin;
     line-height: 6.75vmin;
     width: 100%;
     float: none;
     margin: 0 0 24px; }
+    #exhibit-pages.scroll {
+      position: relative;
+      top: 0; }
   #exhibit-pages .subpages-toggle:before {
     font-size: 4.5vmin;
     line-height: 6.75vmin;
