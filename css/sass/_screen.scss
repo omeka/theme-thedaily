@@ -204,16 +204,13 @@ nav li {
     margin: 0 0 $spacing-unit;
 }
 
-.secondary-nav li {
-    display: inline-block;
-}
-
 .secondary-nav li a {
     background-color: $primary-color;
     font-family: $heading-font;
     color: #000;
-    padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
+    padding: (.25 * $spacing-unit) (.5 * $spacing-unit) 0;
     font-size: .75 * $scalable-font-size;
+    display: block;
 }
 
 .pagination {
@@ -235,7 +232,8 @@ nav li {
     background-color: $primary-color;
     font-family: $heading-font;
     color: #000;
-    padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
+    padding: (.25 * $spacing-unit) (.5 * $spacing-unit) 0;
+    display: block;
 }
 
 .pagination_previous a:before {
@@ -586,7 +584,8 @@ footer {
     background-color: $primary-color;
     font-family: $heading-font;
     color: #000;
-    padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
+    padding: (.25 * $spacing-unit) (.5 * $spacing-unit) 0;
+    display: block;
 }
 
 #sort-links .asc a:after {

@@ -170,6 +170,10 @@ div#featured {
     padding-top: ((.25 * $spacing-unit) - 1px);
 }
 
+.show #content > h1:first-child {
+    word-wrap: break-word;
+}
+
 /* @end */
 
 /* @group ----- Advanced Item Search ----- */
