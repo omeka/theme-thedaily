@@ -57,6 +57,10 @@ ul {
     margin: $spacing-unit 0;
 }
 
+img {
+    image-orientation:from-image;
+}
+
     /* @group ----- Form Elements ----- */
 
     fieldset {
