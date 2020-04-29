@@ -423,7 +423,6 @@ textarea {
   select {
     width: 100%;
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
     padding: 6px 30px 6px 12px;
     font-family: "Assistant", sans-serif;
@@ -441,7 +440,6 @@ textarea {
   textarea {
     width: 100%;
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -451,7 +449,6 @@ textarea {
   button,
   input[type="submit"] {
     -webkit-appearance: none;
-       -moz-appearance: none;
             appearance: none;
     padding: 6px 12px;
     background-color: yellow;
@@ -653,12 +650,6 @@ textarea {
     font-size: 6vmin;
     height: 9vmin;
     padding: 0; }
-  ::-webkit-input-placeholder {
-    font-style: italic; }
-  ::-moz-placeholder {
-    font-style: italic; }
-  :-ms-input-placeholder {
-    font-style: italic; }
   ::-ms-input-placeholder {
     font-style: italic; }
   ::placeholder {
