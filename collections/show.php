@@ -1,5 +1,5 @@
 <?php
-$collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 'Title')));
+$collectionTitle = metadata('collection', 'rich_title', array('no_escape' => true));
 $totalItems = metadata('collection', 'total_items');
 ?>
 
@@ -13,7 +13,6 @@ $totalItems = metadata('collection', 'total_items');
 <div id="collection-items" class="records">
     <?php if ($totalItems > 0): ?>
         <?php foreach (loop('items') as $item): ?>
-        <?php $itemTitle = strip_formatting(metadata('item', array('Dublin Core', 'Title'))); ?>
         <div class="item hentry">
             <div class="item-meta">
             <?php if (metadata('item', 'has files')): ?>
@@ -22,7 +21,7 @@ $totalItems = metadata('collection', 'total_items');
             </div>
             <?php endif; ?>
 
-            <h4><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h4>
+            <h4><?php echo link_to_item(metadata('item', 'rich_title', array('no_escape' => true)), array('class'=>'permalink')); ?></h4>
 
             <?php if ($creator = metadata('item', array('Dublin Core', 'Creator'))): ?>
             <span class="creator"><?php echo $creator; ?></span>
