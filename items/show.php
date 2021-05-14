@@ -5,7 +5,7 @@ $visualMedia = array();
 $otherFiles = array();
 foreach ($itemFiles as $itemFile) {
     $mimeType = $itemFile->mime_type;
-    if (strpos($mimeType, 'image') !== false) {
+    if ((strpos($mimeType, 'image') !== false) || (strpos($mimeType, 'video') !== false)) {
         $visualMedia[] = $itemFile;
     } else {
         $otherFiles[] = $itemFile;
@@ -23,13 +23,13 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 ?>
 
 <h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
-
 <?php if ($hasVisualMedia): ?>
     <ul id="itemfiles" <?php echo (count($visualMedia) == 1) ? 'class="solo"' : ''; ?>>
         <?php $visualMediaCount = 0; ?>
         <?php foreach ($visualMedia as $visualMediaFile): ?>
         <?php $visualMediaCount++; ?>
         <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($visualMediaFile) : $visualMediaFile->getWebPath('original'); ?>
+        <?php if (strpos($visualMediaFile->mime_type, 'image') !== false): ?>
         <li 
             data-src="<?php echo $visualMediaFile->getWebPath('original'); ?>" 
             data-thumb="<?php echo $visualMediaFile->getWebPath('square_thumbnail'); ?>" 
@@ -43,37 +43,36 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
             <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
             </div>
         </li>
+        <?php else: ?>
+            <li 
+                data-thumb="<?php echo file_display_url($visualMediaFile, 'square_thumbnail'); ?>" 
+                data-html="#video-<?php echo $visualMediaCount; ?>"
+                data-sub-html=".media-link-<?php echo $visualMediaCount; ?>" 
+                class="media resource"
+            >
+                <div style="display: none;" id="video-<?php echo $visualMediaCount; ?>">
+                    <video class="lg-video-object lg-html5" controls preload="none">
+                        <source src="<?php echo file_display_url($visualMediaFile, 'original'); ?>" type="<?php echo $visualMediaFile->mime_type; ?>">
+                        <?php echo __('Your browser does not support HTML5 video.'); ?>
+                        <?php $mediaName = pathinfo($visualMediaFile->original_filename, PATHINFO_FILENAME); ?>
+                        <?php foreach ($otherFiles as $key => $otherFile): ?>
+                            <?php if ($otherFile->original_filename == "$mediaName.vtt"): ?>
+                                <?php echo thedaily_output_text_track_file($otherFile); ?>
+                                <?php unset($otherFiles[$key]); ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </video>
+                </div>
+                <div class="media-render">
+                    <?php echo file_image('fullsize', array(), $visualMediaFile); ?>
+                </div>
+                <div class="media-link-<?php echo $visualMediaCount; ?>">
+                    <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
+                </div>
+            </li>
+        <?php endif; ?>
         <?php endforeach; ?>
     </ul>
-<?php endif; ?>
-
-
-<?php echo all_element_texts('item'); ?>
-
-<!-- If the item belongs to a collection, the following creates a link to that collection. -->
-<?php if (metadata('item', 'Collection Name')): ?>
-<div id="collection" class="element">
-    <h3><?php echo __('Collection'); ?></h3>
-    <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
-</div>
-<?php endif; ?>
-
-<!-- The following prints a list of all tags associated with the item -->
-<?php if (metadata('item', 'has tags')): ?>
-<div id="item-tags" class="element">
-    <h3><?php echo __('Tags'); ?></h3>
-    <div class="element-text"><?php echo tag_string('item'); ?></div>
-</div>
-<?php endif;?>
-
-<?php if ((count($otherFiles) > 0) && get_theme_option('other_media') == 1): ?>
-<div id="other-media" class="element">
-    <h3><?php echo __('Files'); ?></h3>
-    <?php foreach ($otherFiles as $otherFile): ?>
-    <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($otherFile) : $otherFile->getWebPath('original'); ?>
-    <div class="element-text"><a href="<?php echo $fileUrl; ?>"><?php echo metadata($otherFile, 'rich_title', array('no_escape' => true)); ?> - <?php echo $otherFile->mime_type; ?></a></div>
-    <?php endforeach; ?>
-</div>
 <?php endif; ?>
 
 <!-- The following prints a citation for this item. -->
