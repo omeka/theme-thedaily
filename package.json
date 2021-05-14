@@ -1,13 +1,13 @@
 {
   "name": "thedaily",
-  "version": "1.2.0",
+  "version": "1.5.1",
   "description": "\"Image-oriented theme for Omeka.\"",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.2.1",
+    "autoprefixer": "^10.2.5",
     "gulp": "^4.0.0",
-    "gulp-postcss": "^8.0.0",
+    "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.0.2",
     "susy": "^2.2.12"
   },
