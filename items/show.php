@@ -75,6 +75,34 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
     </ul>
 <?php endif; ?>
 
+<?php echo all_element_texts('item'); ?>
+
+<!-- If the item belongs to a collection, the following creates a link to that collection. -->
+<?php if (metadata('item', 'Collection Name')): ?>
+<div id="collection" class="element">
+    <h3><?php echo __('Collection'); ?></h3>
+    <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
+</div>
+<?php endif; ?>
+
+<!-- The following prints a list of all tags associated with the item -->
+<?php if (metadata('item', 'has tags')): ?>
+<div id="item-tags" class="element">
+    <h3><?php echo __('Tags'); ?></h3>
+    <div class="element-text"><?php echo tag_string('item'); ?></div>
+</div>
+<?php endif;?>
+
+<?php if ((count($otherFiles) > 0) && get_theme_option('other_media') == 1): ?>
+<div id="other-media" class="element">
+    <h3><?php echo __('Files'); ?></h3>
+    <?php foreach ($otherFiles as $otherFile): ?>
+    <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($otherFile) : $otherFile->getWebPath('original'); ?>
+    <div class="element-text"><a href="<?php echo $fileUrl; ?>"><?php echo metadata($otherFile, 'rich_title', array('no_escape' => true)); ?> - <?php echo $otherFile->mime_type; ?></a></div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
+
 <!-- The following prints a citation for this item. -->
 <div id="item-citation" class="element">
     <h3><?php echo __('Citation'); ?></h3>
