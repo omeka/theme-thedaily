@@ -27,12 +27,13 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
     <ul id="itemfiles" <?php echo (count($visualMedia) == 1) ? 'class="solo"' : ''; ?>>
         <?php $visualMediaCount = 0; ?>
         <?php foreach ($visualMedia as $visualMediaFile): ?>
+        <?php $squareThumbnail = thedaily_get_square_thumbnail_url($visualMediaFile, $this); ?>
         <?php $visualMediaCount++; ?>
         <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($visualMediaFile) : $visualMediaFile->getWebPath('original'); ?>
         <?php if (strpos($visualMediaFile->mime_type, 'image') !== false): ?>
         <li 
             data-src="<?php echo $visualMediaFile->getWebPath('original'); ?>" 
-            data-thumb="<?php echo $visualMediaFile->getWebPath('square_thumbnail'); ?>" 
+            data-thumb="<?php echo $squareThumbnail; ?>" 
             data-sub-html=".media-link-<?php echo $visualMediaCount; ?>"
             class="media resource"
         >
@@ -45,7 +46,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         </li>
         <?php else: ?>
             <li 
-                data-thumb="<?php echo file_display_url($visualMediaFile, 'square_thumbnail'); ?>" 
+                data-thumb="<?php echo $squareThumbnail; ?>" 
                 data-html="#video-<?php echo $visualMediaCount; ?>"
                 data-sub-html=".media-link-<?php echo $visualMediaCount; ?>" 
                 class="media resource"
