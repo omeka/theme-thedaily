@@ -650,8 +650,6 @@ textarea {
     font-size: 6vmin;
     height: 9vmin;
     padding: 0; }
-  ::-ms-input-placeholder {
-    font-style: italic; }
   ::placeholder {
     font-style: italic; }
   #search-form button[type="submit"] {
@@ -882,6 +880,8 @@ textarea {
   .lSSlideOuter .media-render img {
     max-height: 100%;
     width: auto; }
+  .lSPager li:only-of-type {
+    display: none; }
   .lSPager img {
     margin: 0 12px 12px 0;
     vertical-align: bottom;
@@ -1023,7 +1023,6 @@ textarea {
     width: 20%;
     margin: 0 0 24px; }
     #exhibit-pages.scroll {
-      position: -webkit-sticky;
       position: sticky;
       top: 24px; }
   #exhibit-pages ~ * {

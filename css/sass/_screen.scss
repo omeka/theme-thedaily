@@ -770,6 +770,10 @@ footer {
     width: auto;
 }
 
+.lSPager li:only-of-type {
+    display: none;
+}
+
 .lSPager img {
     margin: 0 (.5 * $base-line-height) (.5 * $base-line-height) 0;
     vertical-align: bottom;
