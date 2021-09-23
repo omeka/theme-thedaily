@@ -238,17 +238,20 @@ nav li {
     color: #000;
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit) 0;
     display: block;
+
+    &:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
 }
 
 .pagination_previous a:before {
-    content: $fa-var-caret-left;
-    font-family: "FontAwesome";
+    content: "\f0d9";
     margin: 0 (.25 * $spacing-unit);
 }
 
 .pagination_next a:before {
-    content: $fa-var-caret-right;
-    font-family: "FontAwesome";
+    content: "\f0da";
     margin: 0 (.25 * $spacing-unit);
 }
 
@@ -314,16 +317,19 @@ header a {
     color: #fff;
     cursor: pointer;
     border: 0;
+
+    &:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+    }
 }
 
 #top-nav .menu-toggle:before {
-    content: $fa-var-navicon;
-    font-family: "FontAwesome";
+    content: "\f0c9";
 }
 
 .search-toggle:before {
-    content: $fa-var-search;
-    font-family: "FontAwesome";
+    content: "\f002";
 }
 
 #search-form,
@@ -590,17 +596,20 @@ footer {
     color: #000;
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit) 0;
     display: block;
+
+    &:after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;        
+    }
 }
 
 #sort-links .asc a:after {
-    content: $fa-var-caret-up;
-    font-family: "FontAwesome";
+    content: "\f0d8";
     margin-left: (.25 * $spacing-unit);
 }
 
 #sort-links .desc a:after {
-    content: $fa-var-caret-down;
-    font-family: "FontAwesome";
+    content: "\f0d7";
     margin-left: (.25 * $spacing-unit);
 }
 
@@ -886,8 +895,9 @@ button.remove_search {
 }
 
 button.remove_search:after {
-    content: $fa-var-trash-o;
-    font-family: "FontAwesome";
+    content: "\f1f8";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     text-indent: 0;
     position: absolute;
     top: 0%;
@@ -1049,8 +1059,9 @@ button.add_search {
 
 #exhibit-pages li.current > a:before,
 #exhibit-pages li.parent.collapsed > a:before {
-    font-family: "FontAwesome";
-    content: $fa-var-caret-right;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0da";
     position: absolute;
     left: 0;
     top: (.1667 * $spacing-unit);
@@ -1092,8 +1103,9 @@ button.add_search {
 }
 
 #exhibit-pages .subpages-toggle:before {
-    font-family: "FontAwesome";
-    content: $fa-var-plus;
+    font-family: "Font Awesome 5 Free";
+    content: "\f067";
+    font-weight: 900;
     font-size: .6125 * $scalable-font-size;
     line-height: .6125 * $scalable-line-height;
     display: block;
