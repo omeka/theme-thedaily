@@ -38,7 +38,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
             class="media resource"
         >
             <div class="media-render">
-            <?php echo file_image('original', array(), $visualMediaFile); ?>
+            <?php echo file_image('fullsize', array(), $visualMediaFile); ?>
             </div>
             <div class="media-link-<?php echo $visualMediaCount; ?>">
             <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
