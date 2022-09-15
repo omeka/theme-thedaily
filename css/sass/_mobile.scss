@@ -1,32 +1,32 @@
 /* @group ----- Generic HTML Elements ----- */
 
 html {
-    font-size: 1.5 * $scalable-font-size;
-    line-height: 1.5 * $scalable-line-height;
+    font-size: 1.5 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
 }
 
 h1 {
-    font-size: 2.25 * $scalable-font-size;
-    line-height: 2 * $scalable-line-height;
+    font-size: 2.25 * $base-font-size;
+    line-height: 2 * $base-line-height;
     margin: 0 0 $spacing-unit;
 }
 
 h2 {
-    font-size: 2 * $scalable-font-size;
-    line-height: 2 * $scalable-line-height;
+    font-size: 2 * $base-font-size;
+    line-height: 2 * $base-line-height;
     margin: $spacing-unit 0;
 }
 
 h3 {
-    font-size: 1.75 * $scalable-font-size;
-    line-height: 1.5 * $scalable-line-height;
+    font-size: 1.75 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
     margin: $spacing-unit 0;
 }
 
 h4 {
     margin: $spacing-unit 0;
-    font-size: 1.5 * $scalable-font-size;
-    line-height: 1.5 * $scalable-line-height;
+    font-size: 1.5 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
 }
 
     /* @group ----- Form elements ----- */
@@ -35,8 +35,8 @@ h4 {
     textarea,
     button,
     select {
-        font-size: 1.5 * $scalable-font-size;
-        line-height: 1.5 * $scalable-line-height;
+        font-size: 1.5 * $base-font-size;
+        line-height: 1.5 * $base-line-height;
         margin: 0;
     }
 
@@ -76,7 +76,7 @@ h4 {
 .pagination,
 .pagination input[type="text"],
 .item-pagination {
-    font-size: $scalable-font-size;
+    font-size: $base-font-size;
 }
 
 
@@ -99,8 +99,8 @@ header h1 {
 }
 
 #top-nav ul ul ul li {
-    font-size: $scalable-font-size;
-    line-height: $scalable-line-height;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
 }
 
 #top-nav>ul>li {
@@ -139,18 +139,18 @@ div#featured {
 
 .browse #outputs,
 #sort-links {
-    font-size: $scalable-font-size;
+    font-size: $base-font-size;
 }
 
 .records .hentry {
-    font-size: 1.5 * $scalable-font-size;
-    line-height: 1.5 * $scalable-line-height;
+    font-size: 1.5 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
     width: calc(50% - #{$spacing-unit});
 }
 
 .collection.hentry h2 {
-    font-size: 1.5 * $scalable-font-size;
-    line-height: 1.5 * $scalable-line-height;
+    font-size: 1.5 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
 }
 
 /* @end */
@@ -159,7 +159,7 @@ div#featured {
 
 .element h3,
 .element-text {
-    font-size: 1.5 * $scalable-font-size;
+    font-size: 1.5 * $base-font-size;
     width: 100%;
     text-align: left;
 }
@@ -180,7 +180,7 @@ div#featured {
 
 button.add_search {
     margin-left: 0;
-    font-size: 1.5 * $scalable-font-size;
+    font-size: 1.5 * $base-font-size;
 }
 
 /* @end */
@@ -192,8 +192,8 @@ button.add_search {
 }
 
 #exhibit-pages {
-    font-size: 1.5 * $scalable-font-size;
-    line-height: 1.5 * $scalable-line-height;
+    font-size: 1.5 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
     width: 100%;
     float: none;
     margin: 0 0 $spacing-unit;
@@ -205,8 +205,8 @@ button.add_search {
 }
 
 #exhibit-pages .subpages-toggle:before {
-    font-size: 1.5 * $scalable-font-size;
-    line-height: 1.5 * $scalable-line-height;
+    font-size: 1.5 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
     margin-top: (-.3625 * $spacing-unit);
     padding-right: (.125 * $spacing-unit);
 }
@@ -215,6 +215,15 @@ button.add_search {
     width: 100%;
     float: none;
     padding-left: 0;
+}
+
+.layout-file-text .exhibit-items {
+    max-width: 100%;
+    float: none !important;
+}
+
+.exhibit-items .audio {
+    width: 100%;
 }
 
 /* @end */

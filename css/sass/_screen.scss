@@ -6,8 +6,8 @@
 
 html {
     font-family: $body-font;
-    font-size: $scalable-font-size;
-    line-height: $scalable-line-height;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -19,20 +19,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 1.75 * $scalable-font-size;
-    line-height: 2 * $scalable-line-height;
+    font-size: 1.75 * $base-font-size;
+    line-height: 2 * $base-line-height;
     margin: 0 0 $spacing-unit;
 }
 
 h2 {
-    font-size: 1.5 * $scalable-font-size;
-    line-height: 2 * $scalable-line-height;
+    font-size: 1.5 * $base-font-size;
+    line-height: 2 * $base-line-height;
     margin: $spacing-unit 0;
 }
 
 h3 {
-    font-size: 1.25 * $scalable-font-size;
-    line-height: $scalable-line-height;
+    font-size: 1.25 * $base-font-size;
+    line-height: $base-line-height;
     margin: $spacing-unit 0;
 }
 
@@ -73,7 +73,7 @@ img {
     button,
     select {
         font-family: $body-font;
-        font-size: $scalable-font-size;
+        font-size: $base-font-size;
         line-height: 1;
         margin: 0;
         border-radius: 0;
@@ -87,7 +87,7 @@ img {
         border: 1px solid #ccc;
         border-radius: 3px;
         background: #fff url('../img/select-arrow.svg') right (.5 * $spacing-unit) center no-repeat;
-        background-size: .5 * $scalable-font-size;
+        background-size: .5 * $base-font-size;
     }
 
     input[type="text"],
@@ -213,12 +213,12 @@ nav li {
     font-family: $heading-font;
     color: #000;
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit) 0;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
     display: block;
 }
 
 .pagination {
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
     font-family: $heading-font;
     margin: 0 0 $spacing-unit;
 }
@@ -260,7 +260,7 @@ nav li {
     flex-wrap: wrap;
     justify-content: space-between;
     font-family: $heading-font;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 .item-pagination a {
@@ -388,8 +388,8 @@ header a {
 }
 
 #top-nav ul ul ul li {
-    font-size: .75 * $scalable-font-size;
-    line-height: .75 * $scalable-line-height;
+    font-size: .75 * $base-font-size;
+    line-height: .75 * $base-line-height;
 
     &:before {
         content: "\2014";
@@ -413,8 +413,8 @@ header a {
     display: inline-block;
     width: 50%;
     margin-right: (.5 * $spacing-unit);
-    font-size: 2 * $scalable-font-size;
-    height: 2 * $scalable-line-height;
+    font-size: 2 * $base-font-size;
+    height: 2 * $base-line-height;
     padding: 0;
 }
 
@@ -428,8 +428,8 @@ header a {
     color: #fff;
     display: inline-block;
     cursor: pointer;
-    font-size: 2 * $scalable-font-size;
-    height: 2 * $scalable-line-height;
+    font-size: 2 * $base-font-size;
+    height: 2 * $base-line-height;
     padding-left: (.25 * $spacing-unit);
     padding-right: (.25 * $spacing-unit);
     margin: 0;
@@ -479,7 +479,7 @@ div#featured {
 #featured .record:first-child,
 #featured.layout-2 .record:nth-child(2),
 #featured .record:nth-child(6n),
-#featured .record:nth-child(6n+1), {
+#featured .record:nth-child(6n+1) {
     width: 100%;
 }
 
@@ -574,7 +574,7 @@ footer {
 
 #sort-links {
     font-family: $heading-font;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 #sort-links ul {
@@ -627,8 +627,8 @@ footer {
 }
 
 .records .hentry {
-    font-size: .75 * $scalable-font-size;
-    line-height: .75 * $scalable-line-height;
+    font-size: .75 * $base-font-size;
+    line-height: .75 * $base-line-height;
     width: calc(25% - #{$spacing-unit});
     margin: 0 $spacing-unit (2 * $spacing-unit) 0;
 
@@ -652,7 +652,7 @@ footer {
 
 .browse #outputs {
     width: 100%;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 .browse .outputs-label:after {
@@ -664,9 +664,9 @@ footer {
 }
 
 .collection.hentry h2 {
-    font-size: $scalable-font-size;
-    line-height: $scalable-line-height;
-    margin: (.5 * $scalable-font-size) 0 0;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin: (.5 * $base-font-size) 0 0;
 }
 
 .popularity {
@@ -808,7 +808,7 @@ footer {
 }
 
 .element h3 {
-    font-size: $scalable-font-size;
+    font-size: $base-font-size;
     width: 25%;
     margin: 0;
     display: block;
@@ -910,7 +910,7 @@ button.remove_search:after {
 
 button.add_search {
     margin-left: calc(#{span(4 of 12)} + #{(.5 * $spacing-unit)});
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 #search-filters,
@@ -927,7 +927,7 @@ button.add_search {
     list-style: none;
     padding-left: 0;
     margin: 0;
-    font-size: .75 * $scalable-font-size;
+    font-size: .75 * $base-font-size;
 }
 
 #search-filters li,
@@ -1003,8 +1003,6 @@ button.add_search {
 
 #exhibit-pages {
     align-self: flex-start;
-    font-size: .6125 * $scalable-font-size;
-    line-height: .6125 * $scalable-line-height;
     width: 20%;
     margin: 0 0 $spacing-unit;
     
@@ -1106,8 +1104,8 @@ button.add_search {
     font-family: "Font Awesome 5 Free";
     content: "\f067";
     font-weight: 900;
-    font-size: .6125 * $scalable-font-size;
-    line-height: .6125 * $scalable-line-height;
+    font-size: .6125 * $base-font-size;
+    line-height: .6125 * $base-line-height;
     display: block;
 }
 
