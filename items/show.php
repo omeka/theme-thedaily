@@ -1,83 +1,13 @@
 <?php
 $linkToFileMetadata = get_option('link_to_file_metadata');
 $itemFiles = $item->Files;
-$visualMedia = array();
-$otherFiles = array();
-foreach ($itemFiles as $itemFile) {
-    $mimeType = $itemFile->mime_type;
-    if ((strpos($mimeType, 'image') !== false) || (strpos($mimeType, 'video') !== false)) {
-        $visualMedia[] = $itemFile;
-    } else {
-        $otherFiles[] = $itemFile;
-    }
-}
-$hasVisualMedia = (count($visualMedia) > 0);
-if ($hasVisualMedia) {
-    queue_css_file('lightslider.min');
-    queue_css_file('lightgallery.min');
-    queue_js_file('lightgallery-all.min', 'js');
-    queue_js_file('lightslider.min', 'js');
-    queue_js_file('items-show', 'js');
-}
+queue_lightgallery_assets();
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
 
 <h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
-<?php if ($hasVisualMedia): ?>
-    <ul id="itemfiles" <?php echo (count($visualMedia) == 1) ? 'class="solo"' : ''; ?>>
-        <?php $visualMediaCount = 0; ?>
-        <?php foreach ($visualMedia as $visualMediaFile): ?>
-        <?php $squareThumbnail = thedaily_get_square_thumbnail_url($visualMediaFile, $this); ?>
-        <?php $visualMediaCount++; ?>
-        <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($visualMediaFile) : $visualMediaFile->getWebPath('original'); ?>
-        <?php if (strpos($visualMediaFile->mime_type, 'image') !== false): ?>
-        <li 
-            data-src="<?php echo $visualMediaFile->getWebPath('original'); ?>" 
-            data-thumb="<?php echo $squareThumbnail; ?>" 
-            data-sub-html=".media-link-<?php echo $visualMediaCount; ?>"
-            class="media resource"
-        >
-            <div class="media-render">
-            <?php echo file_image('fullsize', array(), $visualMediaFile); ?>
-            </div>
-            <div class="media-link-<?php echo $visualMediaCount; ?>">
-            <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
-            </div>
-        </li>
-        <?php else: ?>
-            <li 
-                data-thumb="<?php echo $squareThumbnail; ?>" 
-                data-html="#video-<?php echo $visualMediaCount; ?>"
-                data-sub-html=".media-link-<?php echo $visualMediaCount; ?>" 
-                class="media resource"
-            >
-                <div style="display: none;" id="video-<?php echo $visualMediaCount; ?>">
-                    <?php $tracksPresent = thedaily_check_for_tracks($otherFiles); ?>
-                    <video class="lg-video-object lg-html5" controls preload="none" <?php echo ($tracksPresent) ? 'crossorigin="anonymous"' : ''; ?>>
-                        <source src="<?php echo file_display_url($visualMediaFile, 'original'); ?>" type="<?php echo $visualMediaFile->mime_type; ?>">
-                        <?php echo __('Your browser does not support HTML5 video.'); ?>
-                        <?php $mediaName = pathinfo($visualMediaFile->original_filename, PATHINFO_FILENAME); ?>
-                        <?php if ($tracksPresent): ?>
-                        <?php foreach ($otherFiles as $key => $otherFile): ?>
-                            <?php if ($otherFile->original_filename == "$mediaName.vtt"): ?>
-                                <?php echo thedaily_output_text_track_file($otherFile); ?>
-                                <?php unset($otherFiles[$key]); ?>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                        <?php endif; ?>
-                    </video>
-                </div>
-                <div class="media-render">
-                    <?php echo file_image('fullsize', array(), $visualMediaFile); ?>
-                </div>
-                <div class="media-link-<?php echo $visualMediaCount; ?>">
-                    <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
-                </div>
-            </li>
-        <?php endif; ?>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
+
+<?php echo $this->lightGallery($itemFiles); ?>
 
 <?php echo all_element_texts('item'); ?>
 
@@ -97,14 +27,8 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 <?php endif;?>
 
-<?php if ((count($otherFiles) > 0) && get_theme_option('other_media') == 1): ?>
-<div id="other-media" class="element">
-    <h3><?php echo __('Files'); ?></h3>
-    <?php foreach ($otherFiles as $otherFile): ?>
-    <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($otherFile) : $otherFile->getWebPath('original'); ?>
-    <div class="element-text"><a href="<?php echo $fileUrl; ?>"><?php echo metadata($otherFile, 'rich_title', array('no_escape' => true)); ?> - <?php echo $otherFile->mime_type; ?></a></div>
-    <?php endforeach; ?>
-</div>
+<?php if (get_theme_option('other_media') == 1): ?>
+<?php echo $this->lightGallery($itemFiles, false); ?>
 <?php endif; ?>
 
 <!-- The following prints a citation for this item. -->
