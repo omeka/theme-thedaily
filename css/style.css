@@ -1165,6 +1165,11 @@ th {
     padding: 6px;
   }
 
+  .other-files-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
   /* @end */
   /* @group ----- Advanced Item Search ----- */
   .search-entry {

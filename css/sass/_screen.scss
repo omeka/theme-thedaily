@@ -788,6 +788,11 @@ footer {
     padding: (.25 * $spacing-unit);
 }
 
+.other-files-link {
+    display: inline-flex;
+    align-items: center;
+}
+
 /* @end */
 
 /* @group ----- Advanced Item Search ----- */
