@@ -7,7 +7,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 
 <h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
 
-<?php echo $this->lightGallery($itemFiles); ?>
+<?php echo light_gallery($itemFiles); ?>
 
 <?php echo all_element_texts('item'); ?>
 
@@ -28,7 +28,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 <?php endif;?>
 
 <?php if (get_theme_option('other_media') == 1): ?>
-<?php echo $this->lightGallery($itemFiles, false); ?>
+<?php echo light_gallery_other_files($itemFiles); ?>
 <?php endif; ?>
 
 <!-- The following prints a citation for this item. -->
