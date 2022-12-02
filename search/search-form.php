@@ -1,5 +1,8 @@
+<?php $showAdvanced = $options['show_advanced']; ?>
+
 <?php echo $this->form('search-form', $options['form_attributes']); ?>
-    <?php echo $this->formText('query', $filters['query'], array('title' => __('Search'), 'placeholder' => __('Search'))); ?>
+    <div class="search-contents <?php echo ($showAdvanced) ? 'with-advanced' : ''; ?>">
+    <?php echo $this->formText('query', $filters['query'], array('title' => __('Query'), 'placeholder' => __('Keyword'), 'aria-label' => __('Query'))); ?>
     <?php if ($options['show_advanced']): ?>
     <div id="advanced-form">
         <fieldset id="query-types">
@@ -24,5 +27,15 @@
         <?php echo $this->formHidden('record_types[]', $type); ?>
         <?php endforeach; ?>
     <?php endif; ?>
-    <?php echo $this->formButton('submit_search', $options['submit_value'], array('type' => 'submit')); ?>
+    <?php 
+        echo $this->formButton('submit_search', $options['submit_value'], array(
+            'type' => 'submit', 
+            'class' => 'button', 
+            'content' =>  __('Search'), 
+            'escape' => false,
+            'aria-labelledby' => 'search-form submit_search'
+            )
+        ); 
+    ?>
+    </div>
 </form>

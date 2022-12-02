@@ -464,7 +464,9 @@ input[type=submit] {
 [type=button]:-moz-focusring,
 [type=reset]:-moz-focusring,
 [type=submit]:-moz-focusring {
-    outline: 1px dotted;
+    outline: auto;
+    z-index: 1;
+    position: relative;
   }
 
   [type=submit] {
@@ -738,9 +740,12 @@ th {
   #search-form {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    padding-top: 20vh;
+  }
+
+  .search-contents:not(.with-advanced) {
+    display: flex;
   }
 
   #search-form input[type=text] {
@@ -749,7 +754,6 @@ th {
     background-color: transparent;
     color: #fff;
     display: inline-block;
-    width: 50%;
     margin-right: 12px;
     font-size: 36px;
     height: 48px;
@@ -761,23 +765,17 @@ th {
   }
 
   #search-form button[type=submit] {
-    background-color: transparent;
-    border: 3px solid #fff;
-    color: #fff;
-    display: inline-block;
-    cursor: pointer;
     font-size: 36px;
     height: 48px;
     padding-left: 6px;
     padding-right: 6px;
     margin: 0;
     line-height: 0;
-    order: 2;
   }
 
   #advanced-form {
-    order: 3;
     display: flex;
+    margin: 24px 0;
   }
 
   #advanced-form fieldset,
@@ -1112,16 +1110,6 @@ th {
 
   /* @end */
   /* @group ----- Advanced Item Search ----- */
-  #search-form #submit_search {
-    border: 0;
-  }
-
-  #submit_search .icon:after {
-    font-family: "Font Awesome 5 Free";
-    content: "";
-    font-weight: 900;
-  }
-
   .search-entry {
     display: flex;
     justify-content: space-between;
