@@ -23,5 +23,12 @@
                 $('.search-toggle').focus();
             }
         });
+
+        $(document).on('keydown', function(event) {
+            if (event.key == "Escape") {
+                $('body').removeClass('search-open,menu-open');
+                $('#search-form,#top-nav').removeClass('open').addClass('closed');
+            }
+        });
     });
 })(jQuery)
