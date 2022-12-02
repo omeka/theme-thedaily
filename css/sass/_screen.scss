@@ -287,7 +287,16 @@ nav li {
 }
 
 #skipnav {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    font-family: $heading-font;
+
+    &:focus {
+        height: auto;
+        padding: .25 * $spacing-unit;
+    }
 }
 
 #site-title {

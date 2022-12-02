@@ -620,7 +620,15 @@ th {
   }
 
   #skipnav {
-    display: none;
+    height: 0;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    font-family: "Archivo Black", sans-serif;
+  }
+  #skipnav:focus {
+    height: auto;
+    padding: 6px;
   }
 
   #site-title {
