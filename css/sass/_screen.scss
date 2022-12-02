@@ -117,6 +117,14 @@ img {
         cursor: pointer;
     }
 
+    button:-moz-focusring,
+    [type="button"]:-moz-focusring,
+    [type="reset"]:-moz-focusring,
+    [type="submit"]:-moz-focusring {
+        outline: 1px dotted;
+    }
+
+
     [type="submit"] {
         margin: $spacing-unit 0;
     }
@@ -796,6 +804,16 @@ footer {
 /* @end */
 
 /* @group ----- Advanced Item Search ----- */
+
+#search-form #submit_search {
+    border: 0;
+}
+
+#submit_search .icon:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f002";
+    font-weight: 900;
+}
 
 .search-entry {
     display: flex;
