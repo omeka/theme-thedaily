@@ -33,7 +33,6 @@
             'class' => 'button', 
             'content' =>  __('Search'), 
             'escape' => false,
-            'aria-labelledby' => 'search-form submit_search'
             )
         ); 
     ?>
