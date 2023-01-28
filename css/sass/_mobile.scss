@@ -183,6 +183,10 @@ button.add_search {
     font-size: 1.5 * $base-font-size;
 }
 
+button.remove_search {
+    height: 2 * $spacing-unit;
+}
+
 /* @end */
 
 /* @group ----- Exhibits ----- */

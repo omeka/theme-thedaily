@@ -836,12 +836,23 @@ footer {
     width: calc((100% - #{(2.75 * $spacing-unit)}) / 3);
 }
 
+#search-narrow-by-fields .search-entry:not(:only-child) .advanced-search-terms {
+    width: calc(100% - #{(2.75 * $spacing-unit)});
+}
+
+#search-narrow-by-fields .advanced-search-terms input[type=text] {
+    margin-bottom: 0;
+}
+
 button.remove_search {
     text-indent: -9999px;
     width: (2 * $spacing-unit);
+    height: 38px;
     position: relative;
     background-color: #000;
     color: #fff;
+    align-self: flex-end;
+    margin-bottom: .5rem;
 }
 
 button.remove_search:after {
