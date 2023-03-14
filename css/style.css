@@ -414,7 +414,7 @@ button,
 select {
     font-family: "Assistant", sans-serif;
     font-size: 18px;
-    line-height: 1;
+    line-height: 24px;
     margin: 0;
     border-radius: 0;
   }
@@ -1120,8 +1120,18 @@ th {
   /* @group ----- Advanced Item Search ----- */
   .search-entry {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 12px;
+  }
+
+  .search-entry .input {
+    margin-right: 6px;
+  }
+
+  .search-entry .advanced-search-joiner {
+    width: 100%;
+  }
+  .search-entry .advanced-search-joiner select {
+    width: auto;
   }
 
   .search-entry:first-child .advanced-search-joiner {
@@ -1135,15 +1145,6 @@ th {
   .search-entry:only-child > select,
 .search-entry:only-child > input[type=text] {
     width: 33%;
-  }
-
-  .search-entry > select,
-.search-entry > input[type=text] {
-    width: calc((100% - 66px) / 3);
-  }
-
-  #search-narrow-by-fields .search-entry:not(:only-child) .advanced-search-terms {
-    width: calc(100% - 66px);
   }
 
   #search-narrow-by-fields .advanced-search-terms input[type=text] {

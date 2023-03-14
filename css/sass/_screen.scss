@@ -74,7 +74,7 @@ img {
     select {
         font-family: $body-font;
         font-size: $base-font-size;
-        line-height: 1;
+        line-height: $base-line-height;
         margin: 0;
         border-radius: 0;
     }
@@ -814,8 +814,19 @@ footer {
 
 .search-entry {
     display: flex;
-    justify-content: space-between;
     margin-bottom: (.5 * $spacing-unit);
+}
+
+.search-entry .input {
+    margin-right: .25 * $spacing-unit;
+}
+
+.search-entry .advanced-search-joiner {
+    width: 100%;
+
+    select {
+        width: auto;
+    }
 }
 
 .search-entry:first-child .advanced-search-joiner {
@@ -829,15 +840,6 @@ footer {
 .search-entry:only-child > select,
 .search-entry:only-child > input[type="text"] {
     width: 33%;
-}
-
-.search-entry > select,
-.search-entry > input[type="text"] {
-    width: calc((100% - #{(2.75 * $spacing-unit)}) / 3);
-}
-
-#search-narrow-by-fields .search-entry:not(:only-child) .advanced-search-terms {
-    width: calc(100% - #{(2.75 * $spacing-unit)});
 }
 
 #search-narrow-by-fields .advanced-search-terms input[type=text] {
