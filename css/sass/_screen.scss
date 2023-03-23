@@ -86,8 +86,7 @@ img {
         font-family: $body-font;
         border: 1px solid #ccc;
         border-radius: 3px;
-        background: #fff url('../img/select-arrow.svg') right (.5 * $spacing-unit) center no-repeat;
-        background-size: .5 * $base-font-size;
+        background: #fff url("../../../admin/themes/default/images/dropdown-arrow.png") no-repeat center right;
     }
 
     input[type="text"],

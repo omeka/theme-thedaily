@@ -421,14 +421,12 @@ select {
 
   select {
     width: 100%;
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     padding: 6px 30px 6px 12px;
     font-family: "Assistant", sans-serif;
     border: 1px solid #ccc;
     border-radius: 3px;
-    background: #fff url("../img/select-arrow.svg") right 12px center no-repeat;
-    background-size: 9px;
+    background: #fff url("../../../admin/themes/default/images/dropdown-arrow.png") no-repeat center right;
   }
 
   input[type=text],
@@ -440,8 +438,7 @@ input[type=date],
 input[type=datetime-local],
 textarea {
     width: 100%;
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     border: 1px solid #ccc;
     background-color: #fff;
     padding: 6px;
@@ -451,8 +448,7 @@ textarea {
   .button,
 button,
 input[type=submit] {
-    -webkit-appearance: none;
-            appearance: none;
+    appearance: none;
     padding: 6px 12px;
     background-color: yellow;
     border: 3px solid #000;
