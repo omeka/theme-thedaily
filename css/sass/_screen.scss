@@ -820,14 +820,6 @@ footer {
     margin-right: .25 * $spacing-unit;
 }
 
-.search-entry .advanced-search-joiner {
-    width: 100%;
-
-    select {
-        width: auto;
-    }
-}
-
 .search-entry:first-child .advanced-search-joiner {
     display: none;
 }
@@ -836,9 +828,8 @@ footer {
     margin-top: (.5 * $spacing-unit);
 }
 
-.search-entry:only-child > select,
-.search-entry:only-child > input[type="text"] {
-    width: 33%;
+#search-narrow-by-fields .advanced-search-terms {
+    flex-grow: 1;
 }
 
 #search-narrow-by-fields .advanced-search-terms input[type=text] {
