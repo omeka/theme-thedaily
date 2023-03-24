@@ -1,6 +1,6 @@
 {
   "name": "thedaily",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "\"Image-oriented theme for Omeka.\"",
   "main": "gulpfile.js",
   "dependencies": {
