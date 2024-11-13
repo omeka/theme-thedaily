@@ -53,12 +53,12 @@
             <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
 
             <div id="search-container" role="search">
-                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-                <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
-                <?php else: ?>
-                <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
-                <?php endif; ?>
                 <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+                <?php 
+                    $showAdvanced = get_theme_option('use_advanced_search');
+                    $formClass = ($showAdvanced) ? 'with-advanced closed' : 'closed';
+                    echo search_form(array('show_advanced' => $showAdvanced, 'form_attributes' => array('role' => 'search', 'class' => $formClass))); 
+                ?>
             </div>
 
 

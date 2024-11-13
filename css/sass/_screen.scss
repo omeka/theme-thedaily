@@ -373,7 +373,6 @@ header a {
     flex-wrap: wrap;
 }
 
-#search-form.closed,
 #top-nav.closed > ul {
     display: none;
 }
@@ -416,10 +415,14 @@ header a {
 }
 
 #search-form {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    display: none;
+
+    &.open {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;        
+    }
 }
 
 .search-contents:not(.with-advanced) {

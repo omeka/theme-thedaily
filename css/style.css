@@ -701,8 +701,7 @@ th {
     flex-wrap: wrap;
   }
 
-  #search-form.closed,
-#top-nav.closed > ul {
+  #top-nav.closed > ul {
     display: none;
   }
 
@@ -742,6 +741,9 @@ th {
   }
 
   #search-form {
+    display: none;
+  }
+  #search-form.open {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
