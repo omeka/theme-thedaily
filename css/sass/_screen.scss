@@ -329,9 +329,10 @@ header a {
     color: #fff;
 }
 
-#top-nav .menu-toggle,
-.search-toggle {
-    background-color: #000;
+#nav-toggle,
+#search-toggle,
+.close-button {
+    background-color: transparent;
     color: #fff;
     cursor: pointer;
     border: 0;
@@ -342,29 +343,42 @@ header a {
     }
 }
 
-#top-nav .menu-toggle:before {
+.close-button {
+    float: right;
+}
+
+#nav-toggle:before {
     content: "\f0c9";
 }
 
-.search-toggle:before {
+#search-toggle:before {
     content: "\f002";
 }
 
-#search-form,
-#top-nav > ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba(0,0,0,.9);
-    z-index: 9999;
-    margin: 0;
-    padding: (2 * $spacing-unit);
-    text-align: left;
-    height: calc(100vh - #{(2 * $spacing-unit)});
-    color: #fff;
-    vertical-align: top;
-    order: 1;
+.close-button:before {
+    content: "\f00d";
+}
+
+#search-modal,
+#nav-modal {
+    display: none;
+
+    &.open {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        z-index: 9999;
+        margin: 0;
+        padding: (2 * $spacing-unit);
+        text-align: left;
+        color: #fff;
+        vertical-align: top;
+        order: 1;
+    }
 }
 
 #top-nav > ul {
@@ -415,14 +429,10 @@ header a {
 }
 
 #search-form {
-    display: none;
-
-    &.open {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;        
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-contents:not(.with-advanced) {

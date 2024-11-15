@@ -657,39 +657,54 @@ th {
     color: #fff;
   }
 
-  #top-nav .menu-toggle,
-.search-toggle {
-    background-color: #000;
+  #nav-toggle,
+#search-toggle,
+.close-button {
+    background-color: transparent;
     color: #fff;
     cursor: pointer;
     border: 0;
   }
-  #top-nav .menu-toggle:before,
-.search-toggle:before {
+  #nav-toggle:before,
+#search-toggle:before,
+.close-button:before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
 
-  #top-nav .menu-toggle:before {
+  .close-button {
+    float: right;
+  }
+
+  #nav-toggle:before {
     content: "";
   }
 
-  .search-toggle:before {
+  #search-toggle:before {
     content: "";
   }
 
-  #search-form,
-#top-nav > ul {
-    position: absolute;
-    top: 100%;
+  .close-button:before {
+    content: "";
+  }
+
+  #search-modal,
+#nav-modal {
+    display: none;
+  }
+  #search-modal.open,
+#nav-modal.open {
+    display: block;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    bottom: 0;
+    background-color: #000;
     z-index: 9999;
     margin: 0;
     padding: 48px;
     text-align: left;
-    height: calc(100vh - 48px);
     color: #fff;
     vertical-align: top;
     order: 1;
@@ -741,9 +756,6 @@ th {
   }
 
   #search-form {
-    display: none;
-  }
-  #search-form.open {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

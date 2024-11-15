@@ -52,20 +52,25 @@
 
             <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
 
-            <div id="search-container" role="search">
-                <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+            <button type="button" aria-expanded="false" aria-controls="search-form" id="search-toggle" title="<?php echo __('Search'); ?>" aria-label="<?php echo __('Search'); ?>"></button>
+            <button type="button" aria-expanded="false" aria-controls="top-nav" id="nav-toggle" aria-label="<?php echo __('Navigation'); ?>"></button>
+            
+            <div id="search-modal" role="dialog" aria-role="modal" aria-labelledby="search-toggle">
+                <button type="button" class="close-button" id="search-close" data-open-button="#search-toggle" title="<?php echo __('Close'); ?>" aria-label="<?php echo __('Close'); ?>"></button>
                 <?php 
                     $showAdvanced = get_theme_option('use_advanced_search');
-                    $formClass = ($showAdvanced) ? 'with-advanced closed' : 'closed';
+                    $formClass = ($showAdvanced) ? 'with-advanced' : '';
                     echo search_form(array('show_advanced' => $showAdvanced, 'form_attributes' => array('role' => 'search', 'class' => $formClass))); 
                 ?>
             </div>
 
 
-            <nav id="top-nav" role="navigation" class="closed">
-                <button type="button" class="menu-toggle" aria-label="<?php echo __('Toggle menu'); ?>"></button>
-                <?php echo public_nav_main(); ?>
-            </nav>
+            <div id="nav-modal" role="dialog" aria-role="modal" aria-labelledby="nav-toggle">
+                <button type="button" class="close-button" id="search-close" data-open-button="#nav-toggle" title="<?php echo __('Close'); ?>" aria-label="<?php echo __('Close'); ?>"></button>
+                <nav id="top-nav" role="navigation">
+                    <?php echo public_nav_main(); ?>
+                </nav>
+            </div>
 
         </header>
 

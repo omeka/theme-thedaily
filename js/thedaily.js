@@ -1,33 +1,48 @@
 (function($) {
+    var manageModal = function(targetSelector) {
+        var targetElement = $(targetSelector);
+        targetElement.toggleClass('open');
+
+        var firstFocus = targetElement.find(':focusable').first();
+        var lastFocus = targetElement.find(':focusable').last();
+        firstFocus.focus();
+        lastFocus.on('keydown', function(e) {
+            if (e.key == "Tab" && !e.shiftKey) {
+                e.preventDefault();
+                firstFocus.focus();
+            }
+        });
+
+        firstFocus.on('keydown', function(e) {
+            if ((e.key == "Tab") && e.shiftKey) {
+                e.preventDefault();
+                lastFocus.focus();
+            }
+        });
+    };
+
     $(document).ready(function() {
-        $('.search-toggle').click(function() {
-            $('#top-nav.open, #search-form').toggleClass('closed').toggleClass('open');
-            $('body').toggleClass('search-open');
-            if ($('body').hasClass('menu-open')) {
-                $('body').removeClass('menu-open');
-            }
-            $('#query').focus();
+        $(document).on('click', '#search-toggle', function() {
+            manageModal('#search-modal');
         });
 
-        $('.menu-toggle').click(function() {
-            $('#search-form.open, #top-nav').toggleClass('closed').toggleClass('open');
-            $('body').toggleClass('menu-open');
-            if ($('body').hasClass('search-open')) {
-                $('body').removeClass('search-open');
-            }
-            $('#top-nav a').first().focus();
+        $(document).on('click', '#nav-toggle', function() {
+            manageModal('#nav-modal');
         });
 
-        $('#top-nav a').last().on('keydown', function(e) {
-            if (e.keyCode == '9') {
-                $('.search-toggle').focus();
-            }
+        $('header').on('click', '.close-button', function() {
+            var closeButton = $(this);
+            var openButton = $(closeButton.data('open-button'));
+            closeButton.parent().removeClass('open');
+            openButton.focus();
         });
 
         $(document).on('keydown', function(event) {
             if (event.key == "Escape") {
-                $('body').removeClass('search-open,menu-open');
-                $('#search-form,#top-nav').removeClass('open').addClass('closed');
+                var openModal = $('[aria-role="modal"].open');
+                var openButtonSelector = openModal.find('.close-button').data('open-button');
+                openModal.removeClass('open');
+                $(openButtonSelector).focus();
             }
         });
     });
