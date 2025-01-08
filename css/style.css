@@ -554,7 +554,7 @@ th {
     background-color: yellow;
     font-family: "Archivo Black", sans-serif;
     color: #000;
-    padding: 6px 12px 0;
+    padding: 6px 12px;
     font-size: 13.5px;
     display: block;
   }
@@ -563,22 +563,33 @@ th {
     font-size: 13.5px;
     font-family: "Archivo Black", sans-serif;
     margin: 0 0 24px;
+    display: flex;
+  }
+  .pagination .page-input {
+    display: inline-flex;
+  }
+  .pagination form {
+    display: flex;
+    align-items: center;
+    margin-right: 6px;
   }
 
   .pagination input[type=text] {
     border: 2px solid #000;
     width: 48px;
     text-align: center;
-    height: 30px;
     font-family: "Archivo Black", sans-serif;
     font-size: 13.5px;
+    margin-right: 6px;
+    line-height: 1;
+    align-self: stretch;
   }
 
   .pagination a {
     background-color: yellow;
     font-family: "Archivo Black", sans-serif;
     color: #000;
-    padding: 6px 12px 0;
+    padding: 6px 12px;
     display: block;
   }
   .pagination a:before {
@@ -942,7 +953,7 @@ th {
     background-color: yellow;
     font-family: "Archivo Black", sans-serif;
     color: #000;
-    padding: 6px 12px 0;
+    padding: 6px 12px;
     display: block;
   }
   #sort-links a:after {
@@ -1507,6 +1518,10 @@ form .field > .inputs {
 .pagination input[type=text],
 .item-pagination {
     font-size: 18px;
+  }
+
+  .secondary-nav li a {
+    margin-bottom: 6px;
   }
 
   /* @end */
