@@ -1443,6 +1443,10 @@ body.menu-open {
     width: 100%;
   }
 
+  .local-contexts-project {
+    margin-top: 24px;
+  }
+
   /* @end */
 }
 @media screen and (max-width: 800px) {
