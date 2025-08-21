@@ -28,7 +28,8 @@ table a,
 button,
 input[type="submit"],
 .view-items-link,
-.lg-sub-html a {
+.lg-sub-html a,
+footer a {
     background-color: <?php echo $buttonBg; ?>;
     color: <?php echo $buttonText; ?>;
 }
