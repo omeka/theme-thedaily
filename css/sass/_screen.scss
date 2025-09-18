@@ -1,5 +1,10 @@
 /* @group ----- Generic HTML Elements ----- */
 
+:root {
+    --thedaily-primary-bg-color: $primary-color;
+    --thedaily-primary-text-color: #000;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -42,14 +47,15 @@ h4 {
 
 a {
     text-decoration: none;
-    color: #000;
+    color: var(--thedaily-primary-text-color);
 }
 
 p a,
 span a,
 #content ul a,
 #content ol a {
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
+    color: var(--thedaily-primary-text-color);
 }
 
 p,
@@ -110,8 +116,9 @@ img {
     input[type="submit"] {
         appearance: none;
         padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
-        background-color: $primary-color;
-        border: 3px solid #000;
+        background-color: var(--thedaily-primary-bg-color);
+        border: 3px solid var(--thedaily-primary-text-color);
+        color: var(--thedaily-primary-text-color);
         font-family: $heading-font;
         cursor: pointer;
     }
@@ -197,6 +204,11 @@ img {
         background-color: #f7f7f7;
     }
 
+    table a {
+        background-color: var(--thedaily-primary-bg-color);
+        color: var(--thedaily-primary-text-color);
+    }
+
     /* @end */
 
 /* @end */
@@ -218,9 +230,9 @@ nav li {
 }
 
 .secondary-nav li a {
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
     font-family: $heading-font;
-    color: #000;
+    color: var(--thedaily-primary-text-color);
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
     font-size: .75 * $base-font-size;
     display: block;
@@ -255,9 +267,9 @@ nav li {
 }
 
 .pagination a {
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
     font-family: $heading-font;
-    color: #000;
+    color: var(--thedaily-primary-text-color);
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
     display: block;
 
@@ -286,7 +298,8 @@ nav li {
 }
 
 .item-pagination a {
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
+    color: var(--thedaily-primary-text-color);
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
 }
 
@@ -415,7 +428,7 @@ header a {
 }
 
 #top-nav > ul > li > a {
-    color: $primary-color;
+    color: var(--thedaily-primary-bg-color);
 }
 
 #top-nav > ul > li li {
@@ -540,7 +553,7 @@ div#featured {
 }
 
 #featured .record a {
-    color: $primary-color;
+    color: var(--thedaily-primary-bg-color);
 }
 
 #featured .featured-meta {
@@ -556,11 +569,12 @@ div#featured {
 }
 
 #featured .featured-meta h3 {
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
 }
 
 #featured .featured-meta h3 a {
-    color: #000;
+    background-color: var(--thedaily-primary-bg-color);
+    color: var(--thedaily-primary-text-color);
 }
 
 #featured .record img {
@@ -580,13 +594,18 @@ div#featured {
 }
 
 #intro {
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
     margin: (-1 * $spacing-unit) (-2 * $spacing-unit) (2 * $spacing-unit) (-2 * $spacing-unit);
     padding: (2 * $spacing-unit);
 }
 
 #featured + #intro {
     margin-top: (2 * $spacing-unit);
+}
+
+.view-items-link {
+    background-color: var(--thedaily-primary-bg-color);
+    color: var(--thedaily-primary-text-color);
 }
 
 /* @end */
@@ -596,6 +615,10 @@ div#featured {
 footer {
     padding: 0 (2 * $spacing-unit) $spacing-unit;
     clear: both;
+
+    a {
+        background-color: var(--thedaily-primary-bg-color);
+    }
 }
 
 /* @end */
@@ -631,9 +654,9 @@ footer {
 }
 
 #sort-links a {
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
     font-family: $heading-font;
-    color: #000;
+    color: var(--thedaily-primary-text-color);
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
     display: block;
 
@@ -721,7 +744,7 @@ footer {
 	
 	a {
 		padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
-		background-color: $primary-color;
+		background-color: var(--thedaily-primary-bg-color);
 		display: block;
 	}
 
@@ -810,7 +833,8 @@ footer {
 }
 
 .element-text a {
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
+    color: var(--thedaily-primary-text-color);
 }
 
 .show #output-format-list {
@@ -831,6 +855,11 @@ footer {
 .other-files-link {
     display: inline-flex;
     align-items: center;
+}
+
+.lg-sub-html a {
+    background-color: var(--thedaily-primary-bg-color);
+    color: var(--thedaily-primary-text-color);
 }
 
 /* @end */
@@ -1123,7 +1152,8 @@ button.add_search {
 
 #exhibit-page-navigation a {
     padding: (.25 * $spacing-unit);
-    background-color: $primary-color;
+    background-color: var(--thedaily-primary-bg-color);
+    color: var(--thedaily-primary-bg-color);
     display: inline-block;
 }
 
@@ -1156,6 +1186,14 @@ body.menu-open {
 
 .local-contexts-project {
     margin-top: $spacing-unit;
+
+    a {
+        background-color: var(--thedaily-primary-bg-color);
+    }
+}
+
+#content .layout-carousel ul a {
+    background-color: transparent;
 }
 
 /* @end */

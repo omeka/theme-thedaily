@@ -12,32 +12,9 @@
 
 <style>
 
-p a,
-span a,
-#content ul a,
-#content ol a,
-table a,
-.secondary-nav li a,
-.pagination a,
-.item-pagination a,
-#sort-links a,
-.element-text a,
-#exhibit-page-navigation a,
-#featured .featured-meta h3,
-.button,
-button,
-input[type="submit"],
-.view-items-link,
-.lg-sub-html a,
-footer a {
-    background-color: <?php echo $buttonBg; ?>;
-    color: <?php echo $buttonText; ?>;
-}
-
-.button,
-button,
-input[type="submit"] {
-    border-color: <?php echo $buttonText; ?>
+:root {
+    --thedaily-primary-bg-color: <?php echo $buttonBg; ?>;
+    --thedaily-primary-text-color: <?php echo $buttonText; ?>;
 }
 
 #exhibit-pages {
