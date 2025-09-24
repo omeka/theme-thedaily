@@ -165,12 +165,14 @@ img {
     form .field > .label {
         width: span(4 of 12 alpha);
         padding-right: (.5 * $spacing-unit);
+        margin-right: 0;
     }
 
     form .field .five.columns,
     form .field > .inputs {
         width: span(8 of 12 omega);
         padding-left: (.5 * $spacing-unit);
+        margin-left: 0;
     }
 
     form .field > input[type="checkbox"] + label {
