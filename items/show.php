@@ -48,11 +48,11 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 
 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
-<nav>
-<ul class="item-pagination navigation">
-    <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
-    <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
-</ul>
+<nav aria-label="<?php echo __('Item pagination'); ?>">
+    <ul class="item-pagination navigation">
+        <li id="previous-item" class="previous"><?php echo link_to_previous_item_show(); ?></li>
+        <li id="next-item" class="next"><?php echo link_to_next_item_show(); ?></li>
+    </ul>
 </nav>
 
 <?php echo foot(); ?>
