@@ -339,6 +339,34 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "ArchivoBlack";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ArchivoBlack-Regular.woff2") format("woff2"), url("../fonts/ArchivoBlack-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Assistant";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Assistant-Regular.woff2") format("woff2"), url("../fonts/Assistant-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Assistant";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Assistant-Light.woff2") format("woff2"), url("../fonts/Assistant-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Assistant";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../fonts/Assistant-ExtraLight.woff2") format("woff2"), url("../fonts/Assistant-ExtraLight.woff") format("woff");
+}
 @media screen {
   /* @group ----- Generic HTML Elements ----- */
   :root {
