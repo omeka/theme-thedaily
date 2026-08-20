@@ -75,6 +75,6 @@
 
           <?php echo theme_header_image(); ?>
 
-        <article id="content" role="main">
+        <main id="content">
 
             <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>
