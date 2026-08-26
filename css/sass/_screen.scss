@@ -567,14 +567,16 @@ div#featured {
     padding: (.5 * $spacing-unit);
     margin: 0;
     background-color: #000;
+}
+
+#featured .featured-meta h2 {
+    background-color: var(--thedaily-primary-bg-color);
+    font-size: 1.25 * $base-font-size;
+    line-height: $base-line-height;
     display: inline-block;
 }
 
-#featured .featured-meta h3 {
-    background-color: var(--thedaily-primary-bg-color);
-}
-
-#featured .featured-meta h3 a {
+#featured .featured-meta h2 a {
     background-color: var(--thedaily-primary-bg-color);
     color: var(--thedaily-primary-text-color);
 }

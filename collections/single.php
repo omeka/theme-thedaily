@@ -1,3 +1,4 @@
+<?php $headingLevel = (isset($headingLevel)) ? $headingLevel : '3'; ?>
 <div class="collection record">
     <?php
     $title = metadata($collection, 'rich_title', array('no_escape' => true));
@@ -7,7 +8,7 @@
         <?php echo link_to($this->collection, 'show', $collectionImage, array('class' => 'image')); ?>
     <?php endif; ?>
     <div class="featured-meta">
-        <h3><?php echo link_to($this->collection, 'show', $title); ?></h3>
+        <h<?php echo $headingLevel; ?>><?php echo link_to($this->collection, 'show', $title); ?></h<?php echo $headingLevel; ?>>
     <?php if ($description): ?>
         <p class="collection-description"><?php echo $description; ?></p>
     <?php endif; ?>

@@ -11,7 +11,10 @@ function thedaily_random_featured_records_html($recordType, $featuredRecords)
     
     if ($featuredRecords) {
         foreach ($featuredRecords as $featuredRecord) {
-            $html .= get_view()->partial($recordSinglePartial[$recordType], array($recordType => $featuredRecord));
+            $html .= get_view()->partial($recordSinglePartial[$recordType], array(
+                $recordType => $featuredRecord,
+                'headingLevel' => '2'
+            ));
         }
     }
     

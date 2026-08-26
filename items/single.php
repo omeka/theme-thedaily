@@ -1,3 +1,4 @@
+<?php $headingLevel = (isset($headingLevel)) ? $headingLevel : '3'; ?>
 <div class="item record">
     <?php
     $title = metadata($item, 'rich_title', array('no_escape' => true));
@@ -11,7 +12,7 @@
     }
     ?>
     <div class="featured-meta">
-        <h3><?php echo link_to($item, 'show', $title); ?></h3>
+        <h<?php echo $headingLevel; ?>><?php echo link_to($item, 'show', $title); ?></h<?php echo $headingLevel; ?>>
         <?php if ($description): ?>
             <p class="item-description"><?php echo $description; ?></p>
         <?php endif; ?>
