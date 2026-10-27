@@ -73,10 +73,12 @@ $sortLinks[__('Date Added')] = 'added';
 
 <?php endif; ?>
 
+<?php if (get_theme_option('show_output_formats')): ?>
 <div id="outputs">
     <span class="outputs-label"><?php echo __('Output Formats'); ?></span>
     <?php echo output_format_list(false); ?>
 </div>
+<?php endif; ?>
 
 <?php fire_plugin_hook('public_items_browse', array('items'=>$items, 'view' => $this)); ?>
 
