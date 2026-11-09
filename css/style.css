@@ -629,6 +629,7 @@ th {
 
   .pagination a {
     background-color: var(--thedaily-primary-bg-color);
+    border: 2px solid #000;
     font-family: "Archivo Black", sans-serif;
     color: var(--thedaily-primary-text-color);
     padding: 6px 12px;

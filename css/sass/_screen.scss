@@ -270,6 +270,7 @@ nav li {
 
 .pagination a {
     background-color: var(--thedaily-primary-bg-color);
+    border: 2px solid #000;
     font-family: $heading-font;
     color: var(--thedaily-primary-text-color);
     padding: (.25 * $spacing-unit) (.5 * $spacing-unit);
