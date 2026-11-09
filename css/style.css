@@ -640,12 +640,12 @@ th {
   }
 
   .pagination_previous a:before {
-    content: "";
+    content: ""/"";
     margin: 0 6px;
   }
 
   .pagination_next a:before {
-    content: "";
+    content: ""/"";
     margin: 0 6px;
   }
 
@@ -848,6 +848,12 @@ th {
   #advanced-form {
     display: flex;
     margin: 24px 0;
+  }
+
+  #advanced-form a {
+    color: #000;
+    padding: 0 6px;
+    font-family: "Archivo Black", sans-serif;
   }
 
   #advanced-form fieldset,
