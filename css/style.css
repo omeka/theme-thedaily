@@ -732,15 +732,15 @@ th {
   }
 
   #nav-toggle:before {
-    content: "";
+    content: ""/"";
   }
 
   #search-toggle:before {
-    content: "";
+    content: ""/"";
   }
 
   .close-button:before {
-    content: "";
+    content: ""/"";
   }
 
   #search-modal,
@@ -806,7 +806,7 @@ th {
     line-height: 18px;
   }
   #top-nav ul ul ul li:before {
-    content: "—";
+    content: "—"/"";
     margin-right: 6px;
   }
 
@@ -1023,12 +1023,12 @@ th {
   }
 
   #sort-links .asc a:after {
-    content: "";
+    content: ""/"";
     margin-left: 6px;
   }
 
   #sort-links .desc a:after {
-    content: "";
+    content: ""/"";
     margin-left: 6px;
   }
 
@@ -1243,7 +1243,7 @@ th {
   }
 
   button.remove_search:after {
-    content: "";
+    content: ""/"";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     text-indent: 0;
@@ -1286,7 +1286,7 @@ th {
   }
   #search-filters li:not(:last-of-type):after,
 #item-filters li:not(:last-of-type):after {
-    content: "•";
+    content: "•"/"";
     display: inline-block;
     margin: 0 12px;
   }
@@ -1399,7 +1399,7 @@ th {
 #exhibit-pages li.parent.collapsed > a:before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "";
+    content: ""/"";
     position: absolute;
     left: 0;
     top: 4.0008px;
@@ -1441,7 +1441,7 @@ th {
 
   #exhibit-pages .subpages-toggle:before {
     font-family: "Font Awesome 5 Free";
-    content: "";
+    content: ""/"";
     font-weight: 900;
     font-size: 11.025px;
     line-height: 14.7px;

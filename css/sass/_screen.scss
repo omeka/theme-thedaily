@@ -377,15 +377,15 @@ header a {
 }
 
 #nav-toggle:before {
-    content: "\f0c9";
+    content: "\f0c9" / "";
 }
 
 #search-toggle:before {
-    content: "\f002";
+    content: "\f002" / "";
 }
 
 .close-button:before {
-    content: "\f00d";
+    content: "\f00d" / "";
 }
 
 #search-modal,
@@ -452,7 +452,7 @@ header a {
     line-height: .75 * $base-line-height;
 
     &:before {
-        content: "\2014";
+        content: "\2014" / "";
         margin-right: (.25 * $spacing-unit);
     }
 }
@@ -678,12 +678,12 @@ footer {
 }
 
 #sort-links .asc a:after {
-    content: "\f0d8";
+    content: "\f0d8" / "";
     margin-left: (.25 * $spacing-unit);
 }
 
 #sort-links .desc a:after {
-    content: "\f0d7";
+    content: "\f0d7" / "";
     margin-left: (.25 * $spacing-unit);
 }
 
@@ -914,7 +914,7 @@ button.remove_search {
 }
 
 button.remove_search:after {
-    content: "\f1f8";
+    content: "\f1f8" / "";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     text-indent: 0;
@@ -956,7 +956,7 @@ button.add_search {
     margin-bottom: (.5 * $spacing-unit);
 
     &:not(:last-of-type):after {
-        content: "\2022";
+        content: "\2022" / "";
         display: inline-block;
         margin: 0 (.5 * $spacing-unit);
     }
@@ -1078,7 +1078,7 @@ button.add_search {
 #exhibit-pages li.parent.collapsed > a:before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f0da";
+    content: "\f0da" / "";
     position: absolute;
     left: 0;
     top: (.1667 * $spacing-unit);
@@ -1121,7 +1121,7 @@ button.add_search {
 
 #exhibit-pages .subpages-toggle:before {
     font-family: "Font Awesome 5 Free";
-    content: "\f067";
+    content: "\f067" / "";
     font-weight: 900;
     font-size: .6125 * $base-font-size;
     line-height: .6125 * $base-line-height;
